@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/14 13:45:06 by bterral           #+#    #+#             */
-/*   Updated: 2022/06/14 14:26:44 by bterral          ###   ########.fr       */
+/*   Created: 2022/07/01 12:34:01 by bterral           #+#    #+#             */
+/*   Updated: 2022/07/11 10:54:27 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <cstring>
-#include <stdio.h>
+#include "ex01.hpp"
 
-int main(int argc, char **argv)
+class Contact
 {
-	if (argc < 2)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-	else if (argv)
-	{
-		for (int i = 1; i < argc; i++)
-		{
-			for (size_t j = 0; j < strlen(argv[i]); j++)
-			{
-				putchar(toupper(argv[i][j]));
-			}
-		}
-	}
-	std::cout << std::endl;
-	return (0);
-}
+	private:
+		std::string	first_name;
+		std::string	last_name;
+		std::string	nickname;
+		std::string	phone_number;
+		std::string	darkest_secret;
+};
