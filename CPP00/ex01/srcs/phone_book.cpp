@@ -6,7 +6,7 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 11:53:36 by bterral           #+#    #+#             */
-/*   Updated: 2022/07/26 14:58:45 by bterral          ###   ########.fr       */
+/*   Updated: 2022/07/26 16:00:45 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	Phone_book::add_contact(void)
 {
-	for (int i = this->_nb_contact; i > 0; i--)
+	for (int i = (this->_nb_contact == MAX_CONTACT ? MAX_CONTACT - 1 : _nb_contact); i > 0; i--)
 		this->_contact[i] = this->_contact[i - 1];
 	this->_contact[0].set_contact();
 	if (this->_nb_contact < MAX_CONTACT)
