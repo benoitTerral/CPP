@@ -6,7 +6,7 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 14:41:51 by bterral           #+#    #+#             */
-/*   Updated: 2022/07/22 16:46:54 by bterral          ###   ########.fr       */
+/*   Updated: 2022/07/26 13:48:51 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ std::string	format_field(std::string str)
 
 void	Contact::display_contact_fields(int i)
 {
-	std::cout << std::setw(10) << i << "|";
+	std::cout << "|" << std::setw(10) << i << "|";
 	std::cout << std::setw(10) << format_field(this->_first_name) << "|";
 	std::cout << std::setw(10) << format_field(this->_last_name) << "|";
-	std::cout << std::setw(10) << format_field(this->_nickname) << std::endl;
+	std::cout << std::setw(10) << format_field(this->_nickname) << "|" << std::endl;
 }
 
 std::string	Contact::get_string(int index) const
@@ -64,9 +64,10 @@ void	Contact::set_contact(void)
 		std::getline(std::cin, this->_phone_number);
 		std::cout << "Contact darkest secret: ";
 		std::getline(std::cin, this->_darkest_secret);
+		std::cout << std::endl;
 		if (this->_first_name.empty() || this->_last_name.empty()|| this->_nickname.empty()
 			|| this->_phone_number.empty() || this->_darkest_secret.empty())
-			std::cout << "Empty value detected, contact insertion failed" << std::endl;
+			std::cout << BOLDRED << "Empty value detected, all fields must be populated, re-insert contact information:" << RESET << std::endl;
 		else
 			missing_info = 0;
 	}

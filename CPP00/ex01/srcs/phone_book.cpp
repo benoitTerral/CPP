@@ -6,7 +6,7 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 11:53:36 by bterral           #+#    #+#             */
-/*   Updated: 2022/07/22 16:47:57 by bterral          ###   ########.fr       */
+/*   Updated: 2022/07/26 14:58:45 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,43 @@ void	Phone_book::add_contact(void)
 	return ;
 }
 
+void	Phone_book::display_contacts_details(std::string user_input)
+{
+	int	value;
+
+	for (size_t i = 0; i < user_input.size(); i++)
+	{
+		if (!isdigit(user_input[i]))
+		{
+			std::cout << BOLDRED << "Query failed: Id consists of digits between 0 and " << _nb_contact - 1 << " (max contact ID)" << RESET << std::endl << std::endl;
+			return ;
+		}
+	}
+	value = atoi(user_input.c_str());
+	if (value < 0 || value > (_nb_contact - 1))
+	{
+		std::cout << BOLDRED << "Query failed: Id consists of digits between 0 and " << _nb_contact - 1 << " (max contact ID)" << RESET << std::endl << std::endl;
+		return ;
+	}
+	std::cout << YELLOW << "First name      : " << this->_contact[value].get_string(0) << RESET << std::endl;
+	std::cout << YELLOW << "Last name       : " << this->_contact[value].get_string(1) << RESET << std::endl;
+	std::cout << YELLOW << "Nickname        : " << this->_contact[value].get_string(2) << RESET << std::endl;
+	std::cout << YELLOW << "Phone Number    : " << this->_contact[value].get_string(3) << RESET << std::endl;
+	std::cout << YELLOW << "Darkest secret  : " << this->_contact[value].get_string(4) << RESET << std::endl << std::endl;
+}
+
 void	Phone_book::display_contacts(void)
 {
-	std::cout << "          DISPLAYING ALL CONTACTS            " << std::endl;
+	std::string user_input;
+
+	std::cout << std::endl << "          DISPLAYING ALL CONTACTS            " << std::endl;
 	std::cout << "---------------------------------------------" << std::endl;
 	std::cout << "|     INDEX|FIRST NAME| LAST NAME|  NICKNAME|" << std::endl;
+	std::cout << "|   ----   |   ----   |   ----   |   ----   |" << std::endl;
 	for (int i = 0; i < _nb_contact; i++)
 		this->_contact[i].display_contact_fields(i);
-	std::cout << "---------------------------------------------" << std::endl;
+	std::cout << "---------------------------------------------" << std::endl << std::endl;
+	std::cout << std::endl << BOLDGREEN <<"Insert contact ID to get full info: " << RESET;
+	std::getline(std::cin, user_input);
+	Phone_book::display_contacts_details(user_input);
 }
