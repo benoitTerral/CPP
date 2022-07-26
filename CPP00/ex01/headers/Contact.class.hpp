@@ -6,7 +6,7 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 12:34:01 by bterral           #+#    #+#             */
-/*   Updated: 2022/07/22 11:46:42 by bterral          ###   ########.fr       */
+/*   Updated: 2022/07/22 16:44:34 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ class Contact
 	public:
 		Contact(void) {};
 		~Contact(void) {};
-		void	set_contact(void);
+		void		set_contact(void);
+		std::string	get_string(int index) const;
+		void		Contact::display_contact_fields(int i);
 	private:
 		std::string	_first_name;
 		std::string	_last_name;
