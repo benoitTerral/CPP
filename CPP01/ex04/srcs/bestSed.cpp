@@ -6,7 +6,7 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 14:54:08 by bterral           #+#    #+#             */
-/*   Updated: 2022/07/29 17:48:21 by bterral          ###   ########.fr       */
+/*   Updated: 2022/08/06 08:55:31 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,10 @@ int main( int argc, char **argv )
 	int										nbWords = 0;
 	std::vector<std::string> 				stringArgs(argv, argv + argc);
 	std::ifstream							ifs(argv[1]);
-	
+	std::string								newFileName;
+	std::string								fileName(argv[1]);
+	std::ofstream							ofs;
+
 
 	if (argc != 4)
 	{
@@ -39,7 +42,8 @@ int main( int argc, char **argv )
 			words.push_back ( word );
 		nbWords++;
 	}
-	std::ofstream							ofs(stringArgs[1].append(".replace"));
+	newFileName = fileName + ".replace";
+	ofs.open(newFileName.c_str());
 	for (int i = 0; i < nbWords; i++)
 		ofs << words[i];
 	ofs.close();
