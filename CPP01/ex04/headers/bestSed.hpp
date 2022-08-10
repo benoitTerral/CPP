@@ -6,7 +6,7 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 14:52:37 by bterral           #+#    #+#             */
-/*   Updated: 2022/07/29 17:30:44 by bterral          ###   ########.fr       */
+/*   Updated: 2022/08/06 16:28:48 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <fstream>
 #include <vector>
 #include <string.h>
+#include <sstream>
 
 # define RESET   	"\033[0m"
 # define BLACK   	"\033[30m"			/* Black */
