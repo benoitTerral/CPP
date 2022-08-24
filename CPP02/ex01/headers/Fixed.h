@@ -6,7 +6,7 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 11:03:29 by bterral           #+#    #+#             */
-/*   Updated: 2022/08/23 14:34:35 by bterral          ###   ########.fr       */
+/*   Updated: 2022/08/24 11:05:18 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 # define FIXED_H
 
 # include <iostream>
+# include <cmath>
 # include "Fixed.hpp"
-
 
 # define RESET   	"\033[0m"
 # define BLACK   	"\033[30m"			/* Black */

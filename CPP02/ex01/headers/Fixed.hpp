@@ -6,7 +6,7 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 11:03:25 by bterral           #+#    #+#             */
-/*   Updated: 2022/08/23 14:35:09 by bterral          ###   ########.fr       */
+/*   Updated: 2022/08/24 09:40:24 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ class Fixed
 		~Fixed( void );
 		int		getRawBits( void ) const;
 		void	setRawBits( int const raw );
+		float	toFloat( void ) const;
+		int		toInt( void ) const;
 }
 ;
-std::ostream& operator<<(std::ostream out, Fixed const& rhs);
+std::ostream& operator<<(std::ostream& out, Fixed const& rhs);

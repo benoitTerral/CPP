@@ -6,7 +6,7 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 11:32:55 by bterral           #+#    #+#             */
-/*   Updated: 2022/08/23 15:26:41 by bterral          ###   ########.fr       */
+/*   Updated: 2022/08/24 11:15:48 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,14 @@ Fixed::Fixed( void )
 Fixed::Fixed ( const int value )
 {
 	std::cout << GREEN << "Int constructor called" << RESET << std::endl;
-	this->setRawBits(value << )
+	this->setRawBits(value << this->_factrional_bit);
+
 }
 
 Fixed::Fixed ( const float value )
 {
-	std::cout << GREEN << "Int constructor called" << RESET << std::endl;
-	this->_integer = value;
+	std::cout << GREEN << "Float constructor called" << RESET << std::endl;
+	this->setRawBits((int)roundf(value * (1 << this->_factrional_bit)));
 	return ;
 }
 
@@ -53,7 +54,6 @@ Fixed&	Fixed::operator= (const Fixed& rhs)
 
 int		Fixed::getRawBits( void ) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
 	return (this->_integer);
 }
 
@@ -63,7 +63,22 @@ void	Fixed::setRawBits( int const raw )
 	return ;
 }
 
-std::ostream& operator<<(std::ostream out, Fixed const& rhs)
+float	Fixed::toFloat( void ) const
 {
-	
+	// float	float_value;
+
+	// float_value = (float)(this->_integer / (1 << this->_factrional_bit));
+	// return (float_value);
+	return ((float)(this->_integer) / (1 << this->_factrional_bit));
+}
+
+int		Fixed::toInt( void ) const
+{
+	return (this->_integer >> this->_factrional_bit);
+}
+
+std::ostream& operator<<(std::ostream& out, Fixed const& rhs)
+{
+	out << rhs.toFloat();
+	return (out);
 }
