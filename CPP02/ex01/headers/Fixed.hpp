@@ -6,7 +6,7 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 11:03:25 by bterral           #+#    #+#             */
-/*   Updated: 2022/08/24 09:40:24 by bterral          ###   ########.fr       */
+/*   Updated: 2022/08/24 11:20:13 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class Fixed
 		~Fixed( void );
 		int		getRawBits( void ) const;
 		void	setRawBits( int const raw );
+		//EX02
 		float	toFloat( void ) const;
 		int		toInt( void ) const;
 }

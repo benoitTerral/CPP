@@ -6,7 +6,7 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 11:32:55 by bterral           #+#    #+#             */
-/*   Updated: 2022/08/24 11:15:48 by bterral          ###   ########.fr       */
+/*   Updated: 2022/08/24 11:21:14 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ Fixed::Fixed ( const int value )
 
 }
 
+//EX02 constructor added - BEGINS
+
 Fixed::Fixed ( const float value )
 {
 	std::cout << GREEN << "Float constructor called" << RESET << std::endl;
@@ -37,6 +39,8 @@ Fixed::~Fixed ( void )
 {
 	std::cout << RED << "Destructor called" << RESET << std::endl;
 }
+
+//EX02 constructor added - ENDS
 
 Fixed::Fixed ( Fixed const& copy)
 {
@@ -63,12 +67,10 @@ void	Fixed::setRawBits( int const raw )
 	return ;
 }
 
+//EX02
+
 float	Fixed::toFloat( void ) const
 {
-	// float	float_value;
-
-	// float_value = (float)(this->_integer / (1 << this->_factrional_bit));
-	// return (float_value);
 	return ((float)(this->_integer) / (1 << this->_factrional_bit));
 }
 
