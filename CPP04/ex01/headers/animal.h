@@ -6,7 +6,7 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 11:03:29 by bterral           #+#    #+#             */
-/*   Updated: 2022/08/25 15:50:15 by bterral          ###   ########.fr       */
+/*   Updated: 2022/08/26 14:58:38 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 # define ANIMAL_H
 
 # include <iostream>
-# include "wrongAnimal.hpp"
-# include "wrongCat.hpp"
-# include "wrongDog.hpp"
+# include "Brain.hpp"
+# include "Animal.hpp"
+# include "Cat.hpp"
+# include "Dog.hpp"
 
 # define RESET   	"\033[0m"
 # define BLACK   	"\033[30m"			/* Black */

@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/23 11:03:25 by bterral           #+#    #+#             */
-/*   Updated: 2022/08/25 15:50:34 by bterral          ###   ########.fr       */
+/*   Created: 2022/08/25 15:17:23 by bterral           #+#    #+#             */
+/*   Updated: 2022/08/26 16:10:13 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "animal.h"
 
-class wrongAnimal
+class Cat: public Animal
 {
-	protected:
-		std::string	_type;
 	public:
-		wrongAnimal ( void );
+		Cat ( void );
 		// Animal ( std::string type);
-		wrongAnimal ( wrongAnimal const& copy );
-		wrongAnimal& operator= ( const wrongAnimal& rhs );
-		~wrongAnimal( void );
+		Cat ( Cat const& copy );
+		Cat& operator= ( const Cat& rhs );
+		~Cat( void );
 		virtual void	makeSound( void ) const;
 
 		//getter
-		std::string		getType( void ) const;
+		Brain*	getBrain( void ) const;
+	private:
+		Brain*	_brain;
 }
 ;

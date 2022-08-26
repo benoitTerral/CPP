@@ -6,7 +6,7 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 11:03:25 by bterral           #+#    #+#             */
-/*   Updated: 2022/08/25 15:39:17 by bterral          ###   ########.fr       */
+/*   Updated: 2022/08/26 10:32:05 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Animal
 		// Animal ( std::string type);
 		Animal ( Animal const& copy );
 		Animal& operator= ( const Animal& rhs );
-		~Animal( void );
+		virtual	~Animal( void );
 		virtual void	makeSound( void ) const;
 
 		//getter

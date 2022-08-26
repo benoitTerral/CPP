@@ -14,37 +14,37 @@
 
 //Constructors and destructor
 
-wrongAnimal::wrongAnimal ( void )
+Animal::Animal ( void )
 {
-	std::cout << GREEN << "wrongAnimal - default constructor called" << RESET << std::endl;
+	std::cout << GREEN << "Animal - default constructor called" << RESET << std::endl;
 	return ;
 }
 
-// wrongAnimal::wrongAnimal ( std::string type) : _type(type)
+// Animal::Animal ( std::string type) : _type(type)
 // {
-// 	std::cout << GREEN << "wrongAnimal - name constructor called" << RESET << std::endl;
+// 	std::cout << GREEN << "Animal - name constructor called" << RESET << std::endl;
 // }
 
-wrongAnimal::~wrongAnimal ( void )
+Animal::~Animal ( void )
 {
-	std::cout << RED << "wrongAnimal - Destructor called" << RESET << std::endl;
+	std::cout << RED << "Animal - Destructor called" << RESET << std::endl;
 }
 
-wrongAnimal::wrongAnimal ( wrongAnimal const& copy)
+Animal::Animal ( Animal const& copy)
 {
-	std::cout << BLUE << "wrongAnimal - Copy constructor called" << RESET << std::endl;
+	std::cout << BLUE << "Animal - Copy constructor called" << RESET << std::endl;
 	*this = copy;
 	return ;
 }
 
-wrongAnimal&	wrongAnimal::operator= (const wrongAnimal& rhs)
+Animal&	Animal::operator= (const Animal& rhs)
 {
-	std::cout << YELLOW <<  "wrongAnimal - Assignment operator called" << RESET << std::endl;
+	std::cout << YELLOW <<  "Animal - Assignment operator called" << RESET << std::endl;
 	this->_type = rhs.getType();
 	return (*this);
 }
 
-void	wrongAnimal::makeSound( void ) const
+void	Animal::makeSound( void ) const
 {
 	std::cout << "ANIMAL NOISES !!" << std::endl;
 	return ;
@@ -52,7 +52,7 @@ void	wrongAnimal::makeSound( void ) const
 
 //getters
 
-std::string	wrongAnimal::getType( void ) const
+std::string	Animal::getType( void ) const
 {
 	return this->_type;
 }

@@ -6,21 +6,24 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 11:02:30 by bterral           #+#    #+#             */
-/*   Updated: 2022/08/25 15:35:30 by bterral          ###   ########.fr       */
+/*   Updated: 2022/08/26 10:13:01 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "animal.h"
+#include "wrongAnimal.h"
 
 int main( void ) 
 {
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	std::cout << j->getType() << " " << std::endl;
+	const	WrongAnimal*	meta = new WrongAnimal();
+	const	WrongAnimal*	i = new WrongCat();
+	const	WrongCat*		j = new WrongCat();	
 	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
+	std::cout << j->getType() << " " << std::endl;
+	i->makeSound(); //will output animal noise
+	j->makeSound(); //will output cat noise
 	meta->makeSound();
+	delete	meta;
+	delete	i;
+	delete	j;
 	return 0;
 }

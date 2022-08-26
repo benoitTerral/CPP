@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/23 11:02:30 by bterral           #+#    #+#             */
-/*   Updated: 2022/08/26 10:28:28 by bterral          ###   ########.fr       */
+/*   Created: 2022/08/23 11:03:25 by bterral           #+#    #+#             */
+/*   Updated: 2022/08/26 10:08:59 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "animal.h"
+#include "wrongAnimal.h"
 
-int main( void ) 
+class WrongAnimal
 {
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
-	meta->makeSound();
-	delete	meta;
-	delete	i;
-	delete	j;
-	return 0;
+	protected:
+		std::string	_type;
+	public:
+		WrongAnimal ( void );
+		// Animal ( std::string type);
+		WrongAnimal ( WrongAnimal const& copy );
+		WrongAnimal& operator= ( const WrongAnimal& rhs );
+		~WrongAnimal( void );
+		void	makeSound( void ) const;
+
+		//getter
+		std::string		getType( void ) const;
 }
+;

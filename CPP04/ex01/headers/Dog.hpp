@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/23 11:02:30 by bterral           #+#    #+#             */
-/*   Updated: 2022/08/26 10:28:28 by bterral          ###   ########.fr       */
+/*   Created: 2022/08/25 15:24:44 by bterral           #+#    #+#             */
+/*   Updated: 2022/08/26 16:10:08 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "animal.h"
 
-int main( void ) 
+class Dog: public Animal
 {
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
-	meta->makeSound();
-	delete	meta;
-	delete	i;
-	delete	j;
-	return 0;
+	public:
+		Dog ( void );
+		// Animal ( std::string type);
+		Dog ( Dog const& copy );
+		Dog& operator= ( const Dog& rhs );
+		~Dog( void );
+		virtual void	makeSound( void ) const;
+
+		//getter
+		Brain*	getBrain( void ) const;
+	private:
+		Brain*	_brain;
 }
+;

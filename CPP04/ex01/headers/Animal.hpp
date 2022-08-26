@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/25 15:24:44 by bterral           #+#    #+#             */
-/*   Updated: 2022/08/25 15:50:57 by bterral          ###   ########.fr       */
+/*   Created: 2022/08/23 11:03:25 by bterral           #+#    #+#             */
+/*   Updated: 2022/08/26 14:13:21 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "animal.h"
 
-class wrongDog: public wrongAnimal
+class Animal
 {
+	protected:
+		std::string	_type;
 	public:
-		wrongDog ( void );
+		Animal ( void );
 		// Animal ( std::string type);
-		wrongDog ( wrongDog const& copy );
-		wrongDog& operator= ( const wrongDog& rhs );
-		~wrongDog( void );
+		Animal ( Animal const& copy );
+		Animal& operator= ( const Animal& rhs );
+		virtual	~Animal( void );
 		virtual void	makeSound( void ) const;
+
+		//getter
+		std::string		getType( void ) const;
 }
 ;
