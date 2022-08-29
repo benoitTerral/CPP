@@ -6,7 +6,7 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 15:19:44 by bterral           #+#    #+#             */
-/*   Updated: 2022/08/29 13:00:48 by bterral          ###   ########.fr       */
+/*   Updated: 2022/08/29 13:22:40 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ Cat::Cat ( Cat const& copy)
 Cat&	Cat::operator= (const Cat& rhs)
 {
 	std::cout << YELLOW <<  "Cat - Assignment operator called" << RESET << std::endl;
-	this->Animal::_type = rhs.Animal::getType();
+	this->AAnimal::_type = rhs.AAnimal::getType();
 	// if (this->_brain)
 	// 	delete (this->_brain);
 	this->_brain = new Brain();

@@ -6,7 +6,7 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 11:02:30 by bterral           #+#    #+#             */
-/*   Updated: 2022/08/29 13:06:10 by bterral          ###   ########.fr       */
+/*   Updated: 2022/08/29 14:14:28 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,9 @@
 
 int main( void )
 {
-	Animal	*petShop[4];
+	// AAnimal	*animal = new AAnimal();
+	Dog		*snoopy = new Dog();
 
-	std::cout << BOLDYELLOW << "		CREATE AND DESTROY ANIMAL ARRAY		" << RESET << std::endl;
-	for (int i = 0; i < 2; i++)
-		petShop[i] = new Dog();
-	for (int i = 2; i < 4; i++)
-		petShop[i] = new Cat();
-	for (int i = 0; i < 4; i++)
-		delete petShop[i];
-
-	std::cout << std::endl << BOLDYELLOW << "	IDEAS AND DEEP COPIES		" << RESET << std::endl;
-	Cat	*first = new Cat();
-	first->getBrain()->setIdea(0, "kill a bird");
-	first->getBrain()->setIdea(1, "kill a mouse");
-	Cat	surchage = *first;
-	Cat	copy( *first );
-	delete first;
-	std::cout << copy.getBrain()->getIdea(0) << std::endl;
-	std::cout << copy.getBrain()->getIdea(1) << std::endl;
-	std::cout << surchage.getBrain()->getIdea(0) << std::endl;
-	std::cout << surchage.getBrain()->getIdea(1) << std::endl;
+	delete snoopy;
 	return (0);
 }
