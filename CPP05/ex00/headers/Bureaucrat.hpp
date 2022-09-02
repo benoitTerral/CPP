@@ -6,7 +6,7 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 14:17:08 by bterral           #+#    #+#             */
-/*   Updated: 2022/08/29 15:57:27 by bterral          ###   ########.fr       */
+/*   Updated: 2022/08/30 11:47:38 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,14 @@ class Bureaucrat
 		//Modify bureaucrat grade
 		void	incrementGrade( void );
 		void	decrementGrade( void );
+		
+		
 	private:
 		std::string		_name;
 		unsigned int	_grade;
 }
 ;
+
+//surchage operator << 
+
+std::ostream&	operator<< ( std::ostream& out, const Bureaucrat& source);

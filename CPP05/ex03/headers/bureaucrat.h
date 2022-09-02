@@ -6,7 +6,7 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 14:17:16 by bterral           #+#    #+#             */
-/*   Updated: 2022/09/01 12:41:29 by bterral          ###   ########.fr       */
+/*   Updated: 2022/09/02 09:04:51 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # include "ShrubberyCreationForm.hpp"
 # include "RobotomyRequestForm.hpp"
 # include "PresidentialPardonForm.hpp"
+# include "Intern.hpp"
 
 # define RESET   	"\033[0m"
 # define BLACK   	"\033[30m"			/* Black */
