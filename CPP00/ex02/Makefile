@@ -6,7 +6,7 @@
 #    By: bterral <bterral@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/14 13:33:39 by bterral           #+#    #+#              #
-#    Updated: 2022/07/27 15:39:10 by bterral          ###   ########.fr        #
+#    Updated: 2022/09/06 11:36:17 by bterral          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,6 +53,6 @@ clean:
 fclean: clean
 	rm -rf $(OBJS_DIR)
 
-re: fclean all
+re: fclean $(OBJS_DIR) all
 
 .PHONY: all clean fclean re

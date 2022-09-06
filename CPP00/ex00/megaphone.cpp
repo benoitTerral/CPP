@@ -6,13 +6,12 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 13:45:06 by bterral           #+#    #+#             */
-/*   Updated: 2022/06/14 14:26:44 by bterral          ###   ########.fr       */
+/*   Updated: 2022/09/06 11:32:50 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <cstring>
-#include <stdio.h>
 
 int main(int argc, char **argv)
 {
@@ -24,7 +23,7 @@ int main(int argc, char **argv)
 		{
 			for (size_t j = 0; j < strlen(argv[i]); j++)
 			{
-				putchar(toupper(argv[i][j]));
+				std::cout << static_cast<char>(std::toupper(argv[i][j]));
 			}
 		}
 	}
