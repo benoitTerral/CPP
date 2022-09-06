@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 14:17:16 by bterral           #+#    #+#             */
-/*   Updated: 2022/09/06 15:32:28 by bterral          ###   ########.fr       */
+/*   Updated: 2022/09/06 17:24:41 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,6 @@
 # define ARRAY_H
 
 # include <iostream>
-
-template< typename T>
-void	array_mod(T *array, size_t size, void func(T &))
-{
-	for (size_t i = 0; i < size; i++)
-		func(array[i]);
-}
-
-template< typename T>
-void	time_two(T input)
-{
-	std::cout << input * 2 << std::endl; 
-}
 
 # define RESET   	"\033[0m"
 # define BLACK   	"\033[30m"			/* Black */
@@ -45,5 +32,70 @@ void	time_two(T input)
 # define BOLDMAGENTA "\033[1m\033[35m"      /* Bold Magenta */
 # define BOLDCYAN    "\033[1m\033[36m"      /* Bold Cyan */
 # define BOLDWHITE   "\033[1m\033[37m"      /* Bold White */
+
+template< typename T>
+class Array
+{
+	public:
+		Array( void )
+		{
+			std::cout << GREEN << "Array - default constructor" << RESET << std::endl;
+			this->_array = NULL;
+			this->_size = 0;
+		}
+		Array( unsigned int n)
+		{
+			std::cout << GREEN << "Array - constructor called with param" << RESET << std::endl;
+			this->_array = new T[n];
+			this->_size = n;
+		}
+		~Array( void )
+		{
+			std::cout << RED << "Array - Destructor called" << RESET << std::endl;
+			delete this->_array;
+		}
+		Array( Array<T> const& rhs)
+		{
+			std::cout << GREEN << "Array - copy constructor" << RESET << std::endl;
+			*this = rhs;
+		}
+		Array<T>	& operator=(Array<T> const & rhs)
+		{
+			std::cout << GREEN << "Array - surchage operator= constructor" << RESET << std::endl;
+			this->_size = rhs.size();
+			if (this->_array)
+				
+			this->_array = new T[this->_size];
+			for (int i = 0; i < this->_size; i++)
+				this->_array[_size] = rhs._array;
+		}
+		T		operator[] ( unsigned int index) const
+		{
+			if (index >= this->size())
+				throw	indexException();
+			else
+				return (this->_array[index]);
+		}
+		void	display_values( void );
+		class indexException: public std::exception
+		{
+			public:
+				virtual const char* what() const throw()
+				{
+					return ("This array index is not populated");
+				}
+		}
+		;
+		unsigned int	size( void ) const
+		{
+			return (this->_size);
+		}
+	private:
+		T*		_array;
+		unsigned int	_size;
+}
+;
+
+
 
 #endif

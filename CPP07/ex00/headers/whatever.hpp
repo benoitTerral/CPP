@@ -6,12 +6,12 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 14:17:16 by bterral           #+#    #+#             */
-/*   Updated: 2022/09/06 13:45:09 by bterral          ###   ########.fr       */
+/*   Updated: 2022/09/06 15:32:40 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONVERT_H
-# define CONVERT_H
+#ifndef ARRAY_H
+# define ARRAY_H
 
 # include <iostream>
 

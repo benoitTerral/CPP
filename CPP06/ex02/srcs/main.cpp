@@ -6,7 +6,7 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 15:15:17 by bterral           #+#    #+#             */
-/*   Updated: 2022/09/05 18:51:01 by bterral          ###   ########.fr       */
+/*   Updated: 2022/09/06 15:29:40 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,18 +49,22 @@ void identify(Base* p)
 			{
 				case 0:
 					std::cout << "Pointer p is of class A" << std::endl;
+					return ;
 					break;
 				case 1:
 					std::cout << "Pointer p is of class B" << std::endl;
+					return ;
 					break;
 				case 2:
 					std::cout << "Pointer p is of class C" << std::endl;
+					return ;
 					break;
 				default:
 					std::cout << "Unknown" << std::endl;
 			}
 		}
 	}
+	std::cout << "Unknown" << std::endl;
 	return ;
 }
 
@@ -92,7 +96,7 @@ int main ( void )
 {
 	Base *random_ptr = generate();
 	Base &random_ref = *random_ptr;
-
+	// (void)random_ref;
 	identify(random_ptr);
 	identify(random_ref);
 
