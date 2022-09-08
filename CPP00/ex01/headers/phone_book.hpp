@@ -6,7 +6,7 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 10:38:19 by bterral           #+#    #+#             */
-/*   Updated: 2022/07/26 14:09:40 by bterral          ###   ########.fr       */
+/*   Updated: 2022/09/08 16:37:52 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <iostream>
 # include <cstring>
 # include <iomanip>
+#include <string.h>
 # include "Contact.class.hpp"
 # include "Phone_book.class.hpp"
 

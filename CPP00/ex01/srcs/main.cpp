@@ -6,7 +6,7 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 15:02:37 by bterral           #+#    #+#             */
-/*   Updated: 2022/07/26 14:53:46 by bterral          ###   ########.fr       */
+/*   Updated: 2022/09/08 16:39:49 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int main(void)
 			phone_book.add_contact();
 		else if (user_input == "SEARCH")
 			phone_book.display_contacts();
-		else if (user_input == "EXIT")
+		else if (user_input == "EXIT" || std::cin.eof())
 		{
 			std::cout << "Good bye!" << std::endl << std::endl;
 			loop = false;
