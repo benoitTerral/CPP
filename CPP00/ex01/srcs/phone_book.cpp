@@ -6,7 +6,7 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 11:53:36 by bterral           #+#    #+#             */
-/*   Updated: 2022/09/06 11:40:50 by bterral          ###   ########.fr       */
+/*   Updated: 2022/09/08 13:57:29 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,16 @@ void	Phone_book::display_contacts_details(std::string user_input)
 	{
 		if (!isdigit(user_input[i]))
 		{
-			if (_nb_contact == 0)
-				std::cout << BOLDRED << "Query failed: Id does not exist" << RESET << std::endl << std::endl;
+			std::cout << BOLDRED << "Query failed: Id does not exist" << RESET << std::endl << std::endl;
 			return ;
 		}
 	}
 	value = atoi(user_input.c_str());
+	if (_nb_contact == 0)
+	{
+		std::cout << BOLDRED << "Query failed: it seems that there is no contact in the phonebook" << RESET << std::endl;
+		return ;
+	}
 	if (value < 0 || value > (_nb_contact - 1))
 	{
 		std::cout << BOLDRED << "Query failed: Id consists of digits between 0 and " << _nb_contact - 1 << " (max contact ID)" << RESET << std::endl << std::endl;
