@@ -6,7 +6,7 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 14:54:08 by bterral           #+#    #+#             */
-/*   Updated: 2022/09/09 10:18:19 by bterral          ###   ########.fr       */
+/*   Updated: 2022/09/09 13:35:05 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,8 @@ static::std::string	my_replace(std::string input, std::string find_str, std::str
 {
 	std::size_t	pos = 0;
 	
-	if (find_str.empty() || replace_str.empty())
+	if (find_str.empty())
 		return (input);
-	std::cout << input << std::endl;
 	while ((pos = input.find(find_str, pos)) != std::string::npos)
 	{
 		input.erase(pos, find_str.length());
