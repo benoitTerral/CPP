@@ -6,7 +6,7 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 08:41:49 by bterral           #+#    #+#             */
-/*   Updated: 2022/07/28 11:39:34 by bterral          ###   ########.fr       */
+/*   Updated: 2022/09/09 13:53:49 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ class Zombie
 		Zombie ();
 		Zombie( std::string name);
 		~Zombie( void );
-		void	announce( void );
+		void	announce( void ) const;
 		void	setName( std::string name);
 	private:
 		std::string	_name;
