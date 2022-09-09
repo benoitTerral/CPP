@@ -6,30 +6,42 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 14:54:08 by bterral           #+#    #+#             */
-/*   Updated: 2022/08/06 16:40:29 by bterral          ###   ########.fr       */
+/*   Updated: 2022/09/09 10:18:19 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "bestSed.hpp"
 
+
+static::std::string	my_replace(std::string input, std::string find_str, std::string replace_str)
+{
+	std::size_t	pos = 0;
+	
+	if (find_str.empty() || replace_str.empty())
+		return (input);
+	std::cout << input << std::endl;
+	while ((pos = input.find(find_str, pos)) != std::string::npos)
+	{
+		input.erase(pos, find_str.length());
+		input.insert(pos, replace_str);
+		pos += replace_str.length();
+	}
+	return (input);
+}
+
 int main( int argc, char **argv )
 {	
-	std::string								word;
-	std::vector<std::string>				words;
-	int										nbWords = 0;
-	std::vector<std::string> 				stringArgs(argv, argv + argc);
-	std::string								newFileName;
 	std::ifstream							ifs;
+	std::string								newFileName;
 	std::ofstream							ofs;
 	std::string								line;
-
+	std::string								output_str;
 
 	if (argc != 4)
 	{
 		std::cout << RED << "3 arguments expected: FILE_NAME SEARCH_STRING REPLACEMENT" << RESET << std::endl;
 		return (1);
 	}
-	//ifs.unsetf(std::ios::skipws);
 	ifs.open(argv[1]);
 	if (!ifs)
 	{
@@ -37,26 +49,25 @@ int main( int argc, char **argv )
 		return (1);
 	}
 	std::string								fileName(argv[1]);
-	while (getline(ifs, line))
+	while (std::getline(ifs, line))
 	{
-		std::istringstream buffer(line);
-		while ( buffer >> word )
-		{
-			if (word == stringArgs[2])
-				words.push_back( stringArgs[3] );
-			else
-				words.push_back ( word );
-			words.push_back (" ");
-			nbWords = nbWords + 2;
-		}
 		if (!ifs.eof())
-			words.push_back("\n");
-		nbWords++;
+			line.append("\n");
+		line = my_replace(line, static_cast<std::string>(argv[2]), static_cast<std::string>(argv[3]));
+		output_str.append(line);
 	}
+	ifs.close();
 	newFileName = fileName + ".replace";
 	ofs.open(newFileName.c_str());
-	for (int i = 0; i < nbWords; i++)
-		ofs << words[i];
-	ofs.close();
+	if (!ofs)
+	{
+		std::cout << RED << "Failed to create output file" << RESET << std::endl;
+		return (1);
+	}
+	else
+	{
+		ofs << output_str;
+		ofs.close();
+	}
 	return (0);
 }

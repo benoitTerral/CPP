@@ -6,7 +6,7 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 14:52:37 by bterral           #+#    #+#             */
-/*   Updated: 2022/08/06 16:28:48 by bterral          ###   ########.fr       */
+/*   Updated: 2022/09/08 15:55:48 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 #include <iostream>
 #include <fstream>
-#include <vector>
 #include <string.h>
 #include <sstream>
 
