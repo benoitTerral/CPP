@@ -6,7 +6,7 @@
 #    By: bterral <bterral@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/14 13:33:39 by bterral           #+#    #+#              #
-#    Updated: 2022/08/23 11:32:31 by bterral          ###   ########.fr        #
+#    Updated: 2022/09/12 09:44:27 by bterral          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ NAME			:= fixed
 
 SRCS_DIR		:= ./srcs/
 
-SRCS_FILES		:= fixed.cpp main.cpp
+SRCS_FILES		:= Fixed.cpp main.cpp
 
 SRCS			:= $(addprefix $(SRCS_DIR), $(SRCS_FILES))
 
@@ -53,6 +53,6 @@ clean:
 fclean: clean
 	rm -rf $(OBJS_DIR)
 
-re: fclean all
+re: fclean $(OBJS_DIR) all
 
 .PHONY: all clean fclean re
