@@ -6,7 +6,7 @@
 #    By: bterral <bterral@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/14 13:33:39 by bterral           #+#    #+#              #
-#    Updated: 2022/09/12 09:47:15 by bterral          ###   ########.fr        #
+#    Updated: 2022/09/12 14:05:10 by bterral          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,11 +14,11 @@ CC				:= c++
 
 CFLAGS			:= -Wall -Wextra -Werror -std=c++98
 
-NAME			:= fixed
+NAME			:= easyfind
 
 SRCS_DIR		:= ./srcs/
 
-SRCS_FILES		:= fixed.cpp main.cpp
+SRCS_FILES		:= main.cpp
 
 SRCS			:= $(addprefix $(SRCS_DIR), $(SRCS_FILES))
 
@@ -30,7 +30,7 @@ OBJS			:= $(addprefix $(OBJS_DIR), $(LST_OBJS))
 
 HEADERS_DIR		:= ./headers/
 
-HEADERS_FILES	:= Fixed.h Fixed.hpp
+HEADERS_FILES	:= easyfind.hpp
 
 HEADERS			:= $(addprefix $(HEADERS_DIR), $(HEADERS_FILES))
 
@@ -46,6 +46,9 @@ $(NAME): $(OBJS)
 
 $(OBJS_DIR):
 	mkdir -p $(OBJS_DIR)
+
+$(WRONG_OBJS_DIR):
+	mkdir -p $(WRONG_OBJS_DIR)
 
 clean:
 	rm -f $(NAME)
