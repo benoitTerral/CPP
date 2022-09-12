@@ -6,7 +6,7 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 14:17:16 by bterral           #+#    #+#             */
-/*   Updated: 2022/09/06 17:24:41 by bterral          ###   ########.fr       */
+/*   Updated: 2022/09/09 17:57:46 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define ARRAY_H
 
 # include <iostream>
+# include <cstdlib>
 
 # define RESET   	"\033[0m"
 # define BLACK   	"\033[30m"			/* Black */
@@ -37,24 +38,27 @@ template< typename T>
 class Array
 {
 	public:
-		Array( void )
+		Array<T>( void )
 		{
 			std::cout << GREEN << "Array - default constructor" << RESET << std::endl;
 			this->_array = NULL;
 			this->_size = 0;
 		}
-		Array( unsigned int n)
+		Array<T>( const unsigned int n)
 		{
 			std::cout << GREEN << "Array - constructor called with param" << RESET << std::endl;
 			this->_array = new T[n];
 			this->_size = n;
 		}
-		~Array( void )
+		~Array<T>( void )
 		{
 			std::cout << RED << "Array - Destructor called" << RESET << std::endl;
-			delete this->_array;
+			//check what happens if size = 0
+			if (this->_array)
+			// if (this->_size > 0)
+				delete [] this->_array;
 		}
-		Array( Array<T> const& rhs)
+		Array<T>( Array<T> const& rhs)
 		{
 			std::cout << GREEN << "Array - copy constructor" << RESET << std::endl;
 			*this = rhs;
@@ -62,16 +66,19 @@ class Array
 		Array<T>	& operator=(Array<T> const & rhs)
 		{
 			std::cout << GREEN << "Array - surchage operator= constructor" << RESET << std::endl;
-			this->_size = rhs.size();
+			if (this == &rhs)
+				return (*this);
 			if (this->_array)
-				
+				delete [] _array;
+			this->_size = rhs.size();
 			this->_array = new T[this->_size];
-			for (int i = 0; i < this->_size; i++)
-				this->_array[_size] = rhs._array;
+			for (size_t i = 0; i < this->_size; i++)
+				this->_array[i] = rhs._array[i];
+			return (*this);
 		}
-		T		operator[] ( unsigned int index) const
+		T		&operator[] ( unsigned int index) const
 		{
-			if (index >= this->size())
+			if (index >= this->size()) //should I check negative index
 				throw	indexException();
 			else
 				return (this->_array[index]);
@@ -82,20 +89,16 @@ class Array
 			public:
 				virtual const char* what() const throw()
 				{
-					return ("This array index is not populated");
+					return ("This index does not exist");
 				}
 		}
 		;
-		unsigned int	size( void ) const
-		{
-			return (this->_size);
-		}
+		unsigned int	size( void ) const { return (this->_size);}
 	private:
 		T*		_array;
 		unsigned int	_size;
 }
 ;
-
 
 
 #endif

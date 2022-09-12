@@ -6,7 +6,7 @@
 #    By: bterral <bterral@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/14 13:33:39 by bterral           #+#    #+#              #
-#    Updated: 2022/09/06 17:14:09 by bterral          ###   ########.fr        #
+#    Updated: 2022/09/09 17:37:11 by bterral          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ NAME			:= array
 
 SRCS_DIR		:= ./srcs/
 
-SRCS_FILES		:= main.cpp
+SRCS_FILES		:= 42main.cpp
 
 SRCS			:= $(addprefix $(SRCS_DIR), $(SRCS_FILES))
 
