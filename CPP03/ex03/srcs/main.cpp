@@ -6,7 +6,7 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 11:02:30 by bterral           #+#    #+#             */
-/*   Updated: 2022/08/25 14:59:03 by bterral          ###   ########.fr       */
+/*   Updated: 2022/09/13 09:56:45 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ int main( void )
 	no_name.attack("yo-yo");
 	no_name.beRepaired(90);
 	copy_no_name.whoAmI();
-	std::cout << "Hit points : " << copy_no_name.ClapTrap::getHitPoint() << ",Energy points : " << copy_no_name.ClapTrap::getEnergyPoint() << ",Attack damage : " << copy_no_name.ClapTrap::getAttackDamage() << std::endl;
+	std::cout << "Hit points : " << copy_no_name.ClapTrap::getHitPoints() << ",Energy points : " << copy_no_name.ClapTrap::getEnergyPoints() << ",Attack damage : " << copy_no_name.ClapTrap::getAttackDamage() << std::endl;
 	copy_no_name.takeDamage(2);
 	copy_no_name.beRepaired(90);
-	std::cout << "Hit points : " << copy_no_name.ClapTrap::getHitPoint() << ",Energy points : " << copy_no_name.ClapTrap::getEnergyPoint() << ",Attack damage : " << copy_no_name.ClapTrap::getAttackDamage() << std::endl;
+	std::cout << "Hit points : " << copy_no_name.ClapTrap::getHitPoints() << ",Energy points : " << copy_no_name.ClapTrap::getEnergyPoints() << ",Attack damage : " << copy_no_name.ClapTrap::getAttackDamage() << std::endl;
 	std::cout << copy_no_name.getName() << std::endl;
 	std::cout << new_guy.getName() << std::endl;
 	std::cout << last_guy.getName() << std::endl;

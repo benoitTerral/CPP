@@ -6,19 +6,19 @@
 #    By: bterral <bterral@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/14 13:33:39 by bterral           #+#    #+#              #
-#    Updated: 2022/08/25 13:26:35 by bterral          ###   ########.fr        #
+#    Updated: 2022/09/13 09:50:15 by bterral          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC				:= c++
 
-CFLAGS			:= -Wall -Wextra -Werror -std=c++98
+CFLAGS			:= -Wall -Wextra -Werror -Wshadow -Wno-shadow -std=c++98
 
 NAME			:= diamondTrap
 
 SRCS_DIR		:= srcs/
 
-SRCS_FILES		:= clapTrap.cpp scavTrap.cpp fragTrap.cpp diamondTrap.cpp main.cpp
+SRCS_FILES		:= ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp main.cpp
 
 SRCS			:= $(addprefix $(SRCS_DIR), $(SRCS_FILES))
 

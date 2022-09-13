@@ -6,7 +6,7 @@
 #    By: bterral <bterral@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/14 13:33:39 by bterral           #+#    #+#              #
-#    Updated: 2022/09/13 09:42:15 by bterral          ###   ########.fr        #
+#    Updated: 2022/09/13 09:47:21 by bterral          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ NAME			:= clapTrap
 
 SRCS_DIR		:= ./srcs/
 
-SRCS_FILES		:= clapTrap.cpp main.cpp
+SRCS_FILES		:= ClapTrap.cpp main.cpp
 
 SRCS			:= $(addprefix $(SRCS_DIR), $(SRCS_FILES))
 
