@@ -6,7 +6,7 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 01:12:01 by bterral           #+#    #+#             */
-/*   Updated: 2022/09/13 11:05:38 by bterral          ###   ########.fr       */
+/*   Updated: 2022/09/13 14:54:40 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,16 @@ void	ScavTrap::guardGate( void )
 		std::cout << "Behold! " << this->getName() << " is guarding a gate !" << std::endl;
 	else
 		std::cout << this->getName() << " corpse has been move to the gate !" << std::endl;
+}
+
+void	ScavTrap::attack(const std::string& target)
+{
+	if (this->getHitPoints() > 0 && this->getEnergyPoints() > 0)
+	{
+		std::cout << "ScavTrap " << this->getName() << " attacks " << target << ", causing " << this->getAttackDamage() << " points of damage!" << std::endl;
+		this->_energy_points--;
+	}
+	else
+		std::cout << "ScavTrap " << this->getName() << " attack failed !" << std::endl;
+	return ;
 }

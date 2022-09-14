@@ -18,8 +18,8 @@ ClapTrap::ClapTrap ( void )
 {
 	std::cout << GREEN << "ClapTrap - default constructor called" << RESET << std::endl;
 	this->_name = "Untitled";
-	this->_hit_pointss = 10;
-	this->_energy_pointss = 10;
+	this->_hit_points = 10;
+	this->_energy_points = 10;
 	this->_attack_damage = 0;
 	return ;
 }
@@ -27,8 +27,8 @@ ClapTrap::ClapTrap ( void )
 ClapTrap::ClapTrap ( std::string name) : _name(name)
 {
 	std::cout << GREEN << "ClapTrap - name constructor called" << RESET << std::endl;
-	this->_hit_pointss = 10;
-	this->_energy_pointss = 10;
+	this->_hit_points = 10;
+	this->_energy_points = 10;
 	this->_attack_damage = 0;
 }
 
@@ -48,8 +48,8 @@ ClapTrap&	ClapTrap::operator= (const ClapTrap& rhs)
 {
 	std::cout << YELLOW <<  "Assignment operator called" << RESET << std::endl;
 	this->_name = rhs.getName();
-	this->_hit_pointss = rhs.getHitPointss();
-	this->_energy_pointss = rhs.getEnergyPointss();
+	this->_hit_points = rhs.getHitPoints();
+	this->_energy_points = rhs.getEnergyPoints();
 	this->_attack_damage = rhs.getAttackDamage();
 	return (*this);
 }
@@ -61,14 +61,14 @@ std::string	ClapTrap::getName( void ) const
 	return this->_name;
 }
 
-int			ClapTrap::getHitPointss( void ) const
+int			ClapTrap::getHitPoints( void ) const
 {
-	return this->_hit_pointss;
+	return this->_hit_points;
 }
 
-int			ClapTrap::getEnergyPointss( void ) const
+int			ClapTrap::getEnergyPoints( void ) const
 {
-	return this->_energy_pointss;
+	return this->_energy_points;
 }
 
 int			ClapTrap::getAttackDamage( void ) const
@@ -80,10 +80,10 @@ int			ClapTrap::getAttackDamage( void ) const
 
 void	ClapTrap::attack(const std::string& target)
 {
-	if (this->getHitPointss() > 0 && this->getEnergyPointss() > 0)
+	if (this->getHitPoints() > 0 && this->getEnergyPoints() > 0)
 	{
 		std::cout << "ClapTrap " << this->getName() << " attacks " << target << ", causing " << this->getAttackDamage() << " points of damage!" << std::endl;
-		this->_energy_pointss--;
+		this->_energy_points--;
 	}
 	else
 		std::cout << "ClapTrap " << this->getName() << " attack failed !" << std::endl;
@@ -92,10 +92,10 @@ void	ClapTrap::attack(const std::string& target)
 
 void	ClapTrap::takeDamage(unsigned int amount)
 {
-	if (this->getHitPointss() > 0)
+	if (this->getHitPoints() > 0)
 	{
 		std::cout << "ClapTrap " << this->getName() << " took " << amount << " point(s) of damage !" << std::endl;
-		this->_hit_pointss-= amount;
+		this->_hit_points-= amount;
 	}
 	else
 		std::cout << "ClapTrap " << this->getName() << " didn't take damage, it's already over for it !" << std::endl;
@@ -104,11 +104,11 @@ void	ClapTrap::takeDamage(unsigned int amount)
 
 void	ClapTrap::beRepaired(unsigned int amount)
 {
-	if (this->getHitPointss() > 0 && this->getEnergyPointss() > 0)
+	if (this->getHitPoints() > 0 && this->getEnergyPoints() > 0)
 	{
 		std::cout << "ClapTrap " << this->getName() << " has repaired " << amount << " hit point(s)!" << std::endl;
-		this->_hit_pointss += amount;
-		this->_energy_pointss--;
+		this->_hit_points += amount;
+		this->_energy_points--;
 	}
 	else
 		std::cout << "ClapTrap " << this->getName() << " failed reparation !" << std::endl;

@@ -1,36 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   diamondTrap.cpp                                    :+:      :+:    :+:   */
+/*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 11:42:10 by bterral           #+#    #+#             */
-/*   Updated: 2022/09/13 09:56:45 by bterral          ###   ########.fr       */
+/*   Updated: 2022/09/14 10:20:57 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "clapTrap.h"
 
-DiamondTrap::DiamondTrap ( void ) //ClapTrap("Undefined_clap_name", 100, 50, 30)
+DiamondTrap::DiamondTrap ( void ): ClapTrap("Untitled_clap_name"), _name("Untitled")
 {
 	std::cout << GREEN << "DiamondTrap - default constructor called" << RESET << std::endl;
-	this->_name = "Untitled";
-	this->ClapTrap::_name = this->_name + "_clap_name";
-	this->_hit_points = FragTrap::_hit_points;
-	this->_energy_points = ScavTrap::_energy_points;
-	this->_attack_damage = FragTrap::_attack_damage;
-	return ;
+	this->setHealth();
+	this->setEnergy();
+	this->setAttack();
 }
 
-DiamondTrap::DiamondTrap ( std::string name) //ClapTrap(name + "_clap_name", 100, 50, 30)
+DiamondTrap::DiamondTrap ( std::string name): ClapTrap(name + "_clap_name") 
 {
 	std::cout << GREEN << "DiamondTrap - name constructor called" << RESET << std::endl;
 	this->_name = name;
-	this->ClapTrap::_name = this->_name + "_clap_name";
-	this->_hit_points = FragTrap::_hit_points;
-	this->_energy_points = ScavTrap::_energy_points;
-	this->_attack_damage = FragTrap::_attack_damage;
+	this->setHealth();
+	this->setEnergy();
+	this->setAttack();
 }
 
 DiamondTrap::~DiamondTrap ( void )
@@ -54,12 +50,6 @@ DiamondTrap&	DiamondTrap::operator= (const DiamondTrap& rhs)
 	this->_energy_points = rhs.getEnergyPoints();
 	this->_attack_damage = rhs.getAttackDamage();
 	return (*this);
-}
-
-void	DiamondTrap::attack(std::string target)
-{
-	FragTrap::ClapTrap::attack( target );
-	return;
 }
 
 void	DiamondTrap::whoAmI()

@@ -18,18 +18,18 @@ ClapTrap::ClapTrap ( void )
 {
 	std::cout << GREEN << "ClapTrap - default constructor called" << RESET << std::endl;
 	this->_name = "Untitled";
-	this->_hit_points = 10;
-	this->_energy_points = 10;
-	this->_attack_damage = 0;
+	this->_hit_points = FragTrap::ClapTrap::getHitPoints();
+	this->_energy_points = ScavTrap::ClapTrap::getEnergyPoints();
+	this->_attack_damage = FragTrap::ClapTrap::getAttackDamage();
 	return ;
 }
 
 ClapTrap::ClapTrap ( std::string name) : _name(name)
 {
 	std::cout << GREEN << "ClapTrap - name constructor called" << RESET << std::endl;
-	this->_hit_points = 10;
-	this->_energy_points = 10;
-	this->_attack_damage = 0;
+	this->_hit_points = FragTrap::ClapTrap::getHitPoints();
+	this->_energy_points = ScavTrap::ClapTrap::getEnergyPoints();
+	this->_attack_damage = FragTrap::ClapTrap::getAttackDamage();
 }
 
 ClapTrap::~ClapTrap ( void )
