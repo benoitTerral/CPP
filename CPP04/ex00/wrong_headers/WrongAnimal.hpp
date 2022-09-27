@@ -6,7 +6,7 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 11:03:25 by bterral           #+#    #+#             */
-/*   Updated: 2022/08/26 10:08:59 by bterral          ###   ########.fr       */
+/*   Updated: 2022/09/27 13:18:10 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ class WrongAnimal
 		std::string	_type;
 	public:
 		WrongAnimal ( void );
-		// Animal ( std::string type);
 		WrongAnimal ( WrongAnimal const& copy );
 		WrongAnimal& operator= ( const WrongAnimal& rhs );
 		~WrongAnimal( void );

@@ -6,7 +6,7 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 15:19:44 by bterral           #+#    #+#             */
-/*   Updated: 2022/08/26 10:06:35 by bterral          ###   ########.fr       */
+/*   Updated: 2022/09/27 13:18:21 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,6 @@ WrongCat::WrongCat ( void )
 	this->_type = "WrongCat";
 	return ;
 }
-
-// WrongCat::WrongCat ( std::string type) : _type(type)
-// {
-// 	std::cout << GREEN << "WrongCat - name constructor called" << RESET << std::endl;
-// }
 
 WrongCat::~WrongCat ( void )
 {

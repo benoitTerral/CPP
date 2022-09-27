@@ -20,11 +20,6 @@ AAnimal::AAnimal ( void )
 	return ;
 }
 
-// AAnimal::AAnimal ( std::string type) : _type(type)
-// {
-// 	std::cout << GREEN << "AAnimal - name constructor called" << RESET << std::endl;
-// }
-
 AAnimal::~AAnimal ( void )
 {
 	std::cout << RED << "AAnimal - Destructor called" << RESET << std::endl;

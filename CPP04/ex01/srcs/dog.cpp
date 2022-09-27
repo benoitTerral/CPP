@@ -6,7 +6,7 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 15:29:59 by bterral           #+#    #+#             */
-/*   Updated: 2022/08/26 16:09:57 by bterral          ###   ########.fr       */
+/*   Updated: 2022/09/27 13:23:08 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,6 @@ Dog::Dog ( Dog const& copy)
 {
 	std::cout << BLUE << "Dog - Copy constructor called" << RESET << std::endl;
 	*this = copy;
-	// this->_type = copy._type;
-	// this->_brain = new Brain();
-	// for (int i = 0; i < 100; i++)
-	// 	this->_brain->ideas[i] = copy._brain->ideas[i];
 	return ;
 }
 
@@ -45,9 +41,6 @@ Dog&	Dog::operator= (const Dog& rhs)
 	this->Animal::_type = rhs.Animal::getType();
 	this->_brain = new Brain();
 	*(this->_brain) = *(rhs._brain);
-	// this->_brain = new Brain();
-	// for (int i = 0; i < 100; i++)
-	// 	this->_brain->ideas[i] = copy._brain->ideas[i];
 	return (*this);
 }
 

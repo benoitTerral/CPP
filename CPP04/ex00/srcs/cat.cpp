@@ -6,7 +6,7 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 15:19:44 by bterral           #+#    #+#             */
-/*   Updated: 2022/08/25 15:47:58 by bterral          ###   ########.fr       */
+/*   Updated: 2022/09/27 13:16:52 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,6 @@ Cat::Cat ( void )
 	this->_type = "Cat";
 	return ;
 }
-
-// Cat::Cat ( std::string type) : _type(type)
-// {
-// 	std::cout << GREEN << "Cat - name constructor called" << RESET << std::endl;
-// }
 
 Cat::~Cat ( void )
 {

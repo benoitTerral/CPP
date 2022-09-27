@@ -6,12 +6,11 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 14:25:43 by bterral           #+#    #+#             */
-/*   Updated: 2022/08/29 09:04:18 by bterral          ###   ########.fr       */
+/*   Updated: 2022/09/27 13:23:38 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "animal.h"
-// #include "../headers/Brain.hpp"
 
 //Constructors and destructor
 

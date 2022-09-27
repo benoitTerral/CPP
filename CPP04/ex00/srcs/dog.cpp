@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 15:29:59 by bterral           #+#    #+#             */
-/*   Updated: 2022/08/25 15:47:36 by bterral          ###   ########.fr       */
+/*   Updated: 2022/09/27 13:16:57 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,6 @@ Dog::Dog ( void )
 	this->_type = "Dog";
 	return ;
 }
-
-// Dog::Dog ( std::string type) : _type(type)
-// {
-// 	std::cout << GREEN << "Dog - name constructor called" << RESET << std::endl;
-// }
 
 Dog::~Dog ( void )
 {

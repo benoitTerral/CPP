@@ -6,7 +6,7 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 11:02:30 by bterral           #+#    #+#             */
-/*   Updated: 2022/08/29 14:14:28 by bterral          ###   ########.fr       */
+/*   Updated: 2022/09/27 13:23:59 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int main( void )
 {
-	// AAnimal	*animal = new AAnimal();
 	Dog		*snoopy = new Dog();
 
 	delete snoopy;
