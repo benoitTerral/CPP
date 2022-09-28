@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   brain.cpp                                          :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 14:25:43 by bterral           #+#    #+#             */
-/*   Updated: 2022/09/27 13:22:51 by bterral          ###   ########.fr       */
+/*   Updated: 2022/09/28 14:36:24 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "animal.h"
+#include "../headers/Animal.h"
 
 //Constructors and destructor
 
@@ -28,7 +28,6 @@ Brain::~Brain ( void )
 Brain::Brain ( Brain const& copy)
 {
 	std::cout << BLUE << "Brain - Copy constructor called" << RESET << std::endl;
-	// *this = copy;
 	for (int i= 0; i < 100; i++)
 		_ideas[i] = copy.getIdea(i);
 	return ;

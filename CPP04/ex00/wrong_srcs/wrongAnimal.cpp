@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "wrongAnimal.h"
+#include "WrongAnimal.h"
 
 //Constructors and destructor
 

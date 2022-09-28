@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "animal.h"
+#include "../headers/Animal.h"
 
 //Constructors and destructor
 
@@ -18,6 +18,11 @@ AAnimal::AAnimal ( void )
 {
 	std::cout << GREEN << "AAnimal - default constructor called" << RESET << std::endl;
 	return ;
+}
+
+AAnimal::AAnimal (std::string type): _type(type)
+{
+	std::cout << GREEN << "Animal - type constructor called" << RESET << std::endl;
 }
 
 AAnimal::~AAnimal ( void )

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "animal.h"
+#include "Animal.h"
 
 class AAnimal
 {
@@ -18,6 +18,7 @@ class AAnimal
 		std::string	_type;
 	public:
 		AAnimal ( void );
+		AAnimal (std::string type);
 		AAnimal ( AAnimal const& copy );
 		AAnimal& operator= ( const AAnimal& rhs );
 		virtual	~AAnimal( void );

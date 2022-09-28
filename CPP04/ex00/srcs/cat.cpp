@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cat.cpp                                            :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 15:19:44 by bterral           #+#    #+#             */
-/*   Updated: 2022/09/27 13:16:52 by bterral          ###   ########.fr       */
+/*   Updated: 2022/09/28 11:59:12 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "animal.h"
+#include "../headers/Animal.h"
 
 //Constructors and destructor
 
-Cat::Cat ( void )
+Cat::Cat ( void ): Animal("Cat")
 {
 	std::cout << GREEN << "Cat - default constructor called" << RESET << std::endl;
-	this->_type = "Cat";
 	return ;
 }
 
@@ -26,7 +25,7 @@ Cat::~Cat ( void )
 	std::cout << RED << "Cat - Destructor called" << RESET << std::endl;
 }
 
-Cat::Cat ( Cat const& copy)
+Cat::Cat ( Cat const& copy): Animal("Cat")
 {
 	std::cout << BLUE << "Cat - Copy constructor called" << RESET << std::endl;
 	*this = copy;

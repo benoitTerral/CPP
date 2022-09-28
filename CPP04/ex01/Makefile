@@ -6,7 +6,7 @@
 #    By: bterral <bterral@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/14 13:33:39 by bterral           #+#    #+#              #
-#    Updated: 2022/08/26 14:42:22 by bterral          ###   ########.fr        #
+#    Updated: 2022/09/28 10:56:21 by bterral          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,11 +14,11 @@ CC				:= c++
 
 CFLAGS			:= -Wall -Wextra -Werror -std=c++98
 
-NAME			:= animal
+NAME			:= Animal
 
 SRCS_DIR		:= ./srcs/
 
-SRCS_FILES		:= animal.cpp dog.cpp cat.cpp brain.cpp main.cpp
+SRCS_FILES		:= Animal.cpp Dog.cpp Cat.cpp Brain.cpp main.cpp
 
 SRCS			:= $(addprefix $(SRCS_DIR), $(SRCS_FILES))
 
@@ -30,7 +30,7 @@ OBJS			:= $(addprefix $(OBJS_DIR), $(LST_OBJS))
 
 HEADERS_DIR		:= ./headers/
 
-HEADERS_FILES	:= animal.h Animal.hpp Cat.hpp Dog.hpp Brain.hpp
+HEADERS_FILES	:= Animal.h Animal.hpp Cat.hpp Dog.hpp Brain.hpp
 
 HEADERS			:= $(addprefix $(HEADERS_DIR), $(HEADERS_FILES))
 

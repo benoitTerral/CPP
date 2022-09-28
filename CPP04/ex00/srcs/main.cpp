@@ -6,11 +6,11 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 11:02:30 by bterral           #+#    #+#             */
-/*   Updated: 2022/08/26 10:28:28 by bterral          ###   ########.fr       */
+/*   Updated: 2022/09/28 09:54:27 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "animal.h"
+#include "../headers/Animal.h"
 
 int main( void ) 
 {

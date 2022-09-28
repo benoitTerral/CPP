@@ -10,14 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "animal.h"
+#include "Animal.h"
 
 //Constructors and destructor
 
-Animal::Animal ( void )
+Animal::Animal ( void ): _type("undefinedAnimal")
 {
 	std::cout << GREEN << "Animal - default constructor called" << RESET << std::endl;
-	return ;
+}
+
+Animal::Animal (std::string type): _type(type)
+{
+	std::cout << GREEN << "Animal - type constructor called" << RESET << std::endl;
 }
 
 Animal::~Animal ( void )

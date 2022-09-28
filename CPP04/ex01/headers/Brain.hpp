@@ -6,11 +6,11 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 14:11:38 by bterral           #+#    #+#             */
-/*   Updated: 2022/08/26 15:56:27 by bterral          ###   ########.fr       */
+/*   Updated: 2022/09/28 10:56:27 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "animal.h"
+#include "Animal.h"
 
 class Brain
 {
