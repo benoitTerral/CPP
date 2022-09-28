@@ -6,7 +6,7 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 14:25:43 by bterral           #+#    #+#             */
-/*   Updated: 2022/09/28 14:36:24 by bterral          ###   ########.fr       */
+/*   Updated: 2022/09/28 15:36:29 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,13 @@ Brain&	Brain::operator= (const Brain& rhs)
 
 std::string	Brain::getIdea( int i) const
 {
-	return	this->_ideas[i];
+	if (i >= 0 && i < 100)
+		return	this->_ideas[i];
+	return (NULL);
 }
 
 void		Brain::setIdea( int i, std::string idea)
 {
-	this->_ideas[i] = idea;
-	return ;
+	if (i >= 0 && i < 100)
+		this->_ideas[i] = idea;
 }
