@@ -6,7 +6,7 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 14:17:08 by bterral           #+#    #+#             */
-/*   Updated: 2022/09/29 16:04:51 by bterral          ###   ########.fr       */
+/*   Updated: 2022/09/29 17:05:54 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,8 @@ class Bureaucrat
 		void	executeForm(AForm const & form);
 
 	private:
-		std::string		_name;
-		unsigned int	_grade;
+		const std::string		_name;
+		unsigned int			_grade;
 }
 ;
 

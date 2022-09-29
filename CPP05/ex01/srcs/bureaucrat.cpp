@@ -6,7 +6,7 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 14:21:46 by bterral           #+#    #+#             */
-/*   Updated: 2022/09/28 17:55:30 by bterral          ###   ########.fr       */
+/*   Updated: 2022/09/29 17:06:53 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ Bureaucrat::Bureaucrat(Bureaucrat const& rhs): _name(rhs.getName()),_grade(rhs.g
 Bureaucrat&	Bureaucrat::operator= (const Bureaucrat& rhs)
 {
 	std::cout << YELLOW <<  "Bureaucrat - Assignment operator called" << RESET << std::endl;
-	this->_name = rhs.getName();
 	this->_grade = rhs.getGrade();
 	return (*this);
 }

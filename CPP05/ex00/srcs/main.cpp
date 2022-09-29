@@ -6,7 +6,7 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 15:15:17 by bterral           #+#    #+#             */
-/*   Updated: 2022/09/28 16:24:02 by bterral          ###   ########.fr       */
+/*   Updated: 2022/09/29 17:12:25 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -173,6 +173,28 @@ int main( void )
 
 	std::cout << *bureaucrat7 << std::endl;
 	delete bureaucrat7;
+
+
+	try
+	{
+		std::cout << std::endl << BOLDBLUE << "Inserting Bureaucrat9 by operator=" << RESET << std::endl;
+		Bureaucrat	bureaucrat8("Carlos", 5);
+		Bureaucrat	bureaucrat9;
+		bureaucrat9 = bureaucrat8;
+		std::cout << bureaucrat9 << std::endl;
+	}
+	catch( Bureaucrat::GradeTooLowException& e)
+	{
+		std::cerr << BOLDRED << e.what() << RESET << std::endl;
+	}
+	catch( Bureaucrat::GradeTooHighException& e)
+	{
+		std::cerr << BOLDRED << e.what() << RESET << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 
 	return (0);
 }

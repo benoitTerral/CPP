@@ -6,7 +6,7 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 14:21:46 by bterral           #+#    #+#             */
-/*   Updated: 2022/09/29 15:57:25 by bterral          ###   ########.fr       */
+/*   Updated: 2022/09/29 17:20:07 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Bureaucrat::Bureaucrat( void ): _name("Undefined"),_grade(150)
 	return ;
 }
 
-Bureaucrat::Bureaucrat( std::string name, unsigned int grade)
+Bureaucrat::Bureaucrat( std::string name, unsigned int grade): _name(name)
 {
 	std::cout << GREEN << "Bureaucrat - constructor with param called" << RESET << std::endl;
 	if (grade < 1)
@@ -27,7 +27,6 @@ Bureaucrat::Bureaucrat( std::string name, unsigned int grade)
 		throw	GradeTooLowException();
 	else
 		this->_grade = grade;
-	this->_name = name;
 }
 
 Bureaucrat::Bureaucrat(Bureaucrat const& rhs): _name(rhs.getName()),_grade(rhs._grade)
@@ -39,7 +38,6 @@ Bureaucrat::Bureaucrat(Bureaucrat const& rhs): _name(rhs.getName()),_grade(rhs._
 Bureaucrat&	Bureaucrat::operator= (const Bureaucrat& rhs)
 {
 	std::cout << YELLOW <<  "Bureaucrat - Assignment operator called" << RESET << std::endl;
-	this->_name = rhs.getName();
 	this->_grade = rhs.getGrade();
 	return (*this);
 }
