@@ -6,7 +6,7 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 15:15:17 by bterral           #+#    #+#             */
-/*   Updated: 2022/09/29 17:12:25 by bterral          ###   ########.fr       */
+/*   Updated: 2022/09/29 17:27:29 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ int main( void )
 	{
 		std::cout << std::endl << BOLDBLUE << "Inserting Bureaucrat2" << RESET << std::endl;
 		Bureaucrat	bureaucrat2("bureaucrat2", 1);
+		bureaucrat2.incrementGrade();
 		std::cout << bureaucrat2 << std::endl;
 	}
 	catch( Bureaucrat::GradeTooLowException& e)
