@@ -6,22 +6,20 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 15:15:17 by bterral           #+#    #+#             */
-/*   Updated: 2022/09/01 13:01:49 by bterral          ###   ########.fr       */
+/*   Updated: 2022/09/29 16:34:51 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bureaucrat.h"
+#include "../headers/Bureaucrat.h"
 
 int main( void )
 {
-	//
 	Bureaucrat				bureaucrat0("bureaucrat0", 1);
 	Bureaucrat				bureaucrat1("bureaucrat1", 150);
 	Bureaucrat				bureaucrat2("bureaucrat2", 140);
 	
 
-
-	std::cout << BOLDYELLOW << "   Shrubbery Tests" << RESET << std::endl;
+	std::cout << std::endl << BOLDYELLOW << "   Shrubbery Tests" << RESET << std::endl;
 	ShrubberyCreationForm	shrubbery("sequoia");
 	bureaucrat1.signForm(shrubbery);
 	bureaucrat1.executeForm(shrubbery);
@@ -35,15 +33,15 @@ int main( void )
 	}
 	catch (AForm::FormNotSignedException& e)
 	{
-		std::cerr << e.what() << std::endl;
+		std::cerr << BOLDRED << e.what() << RESET << std::endl;
 	}
 	catch (AForm::GradeTooLowException& e)
 	{
-		std::cerr << e.what() << std::endl;
+		std::cerr << BOLDRED << e.what() << RESET << std::endl;
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << BOLDRED << e.what() << RESET << std::endl;
 	}
 	try
 	{
@@ -51,19 +49,18 @@ int main( void )
 	}
 	catch (AForm::FormNotSignedException& e)
 	{
-		std::cerr << e.what() << std::endl;
+		std::cerr << BOLDRED << e.what() << RESET << std::endl;
 	}
 	catch (AForm::GradeTooLowException& e)
 	{
-		std::cerr << e.what() << std::endl;
+		std::cerr << BOLDRED << e.what() << RESET << std::endl;
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << BOLDRED << e.what() << RESET << std::endl;
 	}
-	shrubbery.execute(bureaucrat0);
 
-	std::cout << BOLDYELLOW << "   Robotomy Tests" << RESET << std::endl;
+	std::cout  << std::endl << BOLDYELLOW << "   Robotomy Tests" << RESET << std::endl;
 	RobotomyRequestForm	robotomyRequestForm("yoRobot");
 	bureaucrat1.executeForm(robotomyRequestForm);
 	bureaucrat1.signForm(robotomyRequestForm);

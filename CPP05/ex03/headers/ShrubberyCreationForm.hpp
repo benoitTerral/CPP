@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bureaucrat.h"
+#include "Bureaucrat.h"
 
 class ShrubberyCreationForm: public AForm
 {

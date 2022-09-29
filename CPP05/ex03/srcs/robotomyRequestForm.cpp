@@ -1,18 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   robotomyRequestForm.cpp                            :+:      :+:    :+:   */
+/*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 15:49:15 by bterral           #+#    #+#             */
-/*   Updated: 2022/09/01 13:04:37 by bterral          ###   ########.fr       */
+/*   Updated: 2022/09/29 14:32:00 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bureaucrat.h"
-
-#include "bureaucrat.h"
+#include "../headers/Bureaucrat.h"
 
 RobotomyRequestForm::RobotomyRequestForm( void ): AForm("RobotomyRequestForm", 72, 45), _target("Undefined")
 {

@@ -6,11 +6,11 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 15:31:40 by bterral           #+#    #+#             */
-/*   Updated: 2022/09/01 11:38:58 by bterral          ###   ########.fr       */
+/*   Updated: 2022/09/29 14:32:31 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bureaucrat.h"
+#include "Bureaucrat.h"
 
 class RobotomyRequestForm:  public AForm
 {

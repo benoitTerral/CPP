@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   form.cpp                                           :+:      :+:    :+:   */
+/*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 11:50:19 by bterral           #+#    #+#             */
-/*   Updated: 2022/08/31 15:08:33 by bterral          ###   ########.fr       */
+/*   Updated: 2022/09/29 12:08:19 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bureaucrat.h"
+#include "../headers/Bureaucrat.h"
 
 Form::Form( void ): _name("Undefined"),_isSigned(false),_gradeSign(150),_gradeExecute(150)
 {
@@ -22,9 +22,9 @@ Form::Form(std::string name, unsigned int gradeSign, unsigned int gradeExecute):
 {
 	std::cout << GREEN << "Form - constructor with param called" << RESET << std::endl;
 	if (gradeSign < 1 || gradeExecute < 1)
-		throw	Bureaucrat::GradeTooHighException();
-	else if (gradeSign > 150 || gradeExecute >150)
-		throw	Bureaucrat::GradeTooLowException();
+		throw	GradeTooHighException();
+	else if (gradeSign > 150 || gradeExecute > 150)
+		throw	GradeTooLowException();
 	else
 	{
 		this->_gradeSign = gradeSign;

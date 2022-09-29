@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   shrubberyCreationForm.cpp                          :+:      :+:    :+:   */
+/*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 15:48:18 by bterral           #+#    #+#             */
-/*   Updated: 2022/09/01 12:17:07 by bterral          ###   ########.fr       */
+/*   Updated: 2022/09/29 13:39:10 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bureaucrat.h"
+#include "../headers/Bureaucrat.h"
 
 ShrubberyCreationForm::ShrubberyCreationForm( void ): AForm("ShrubberyCreationForm", 145, 137), _target("Undefined")
 {
@@ -62,7 +62,9 @@ void	ShrubberyCreationForm::execute(Bureaucrat const& executor) const
 		std::cout << "Tree drawn by " << executor.getName() << " in file " << this->_target << "_shubbery" << std::endl;
 		std::string		fileName = this->_target + "_shrubbery";
 		std::ofstream 	myFile(fileName.c_str());
-		// myFile.open(fileName.c_str()); 
+		//add protection
+		if (!myFile)
+			std::cout << RED << "Failed to draw tree by " << executor.getName() << " in file " << this->_target << "_shubbery. Check file permission." << std::endl;
 		std::string	content;
 		content.append( "		              v .   ._, |_  .,\n");
 		content.append( "           `-._\\/  .  \\ /    |/_\n");

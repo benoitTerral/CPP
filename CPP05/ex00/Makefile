@@ -6,7 +6,7 @@
 #    By: bterral <bterral@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/14 13:33:39 by bterral           #+#    #+#              #
-#    Updated: 2022/08/29 15:05:11 by bterral          ###   ########.fr        #
+#    Updated: 2022/09/27 15:02:46 by bterral          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ NAME			:= bureaucrat
 
 SRCS_DIR		:= ./srcs/
 
-SRCS_FILES		:= bureaucrat.cpp main.cpp
+SRCS_FILES		:= Bureaucrat.cpp main.cpp
 
 SRCS			:= $(addprefix $(SRCS_DIR), $(SRCS_FILES))
 
@@ -30,7 +30,7 @@ OBJS			:= $(addprefix $(OBJS_DIR), $(LST_OBJS))
 
 HEADERS_DIR		:= ./headers/
 
-HEADERS_FILES	:= bureaucrat.h Bureaucrat.hpp
+HEADERS_FILES	:= Bureaucrat.h Bureaucrat.hpp
 
 HEADERS			:= $(addprefix $(HEADERS_DIR), $(HEADERS_FILES))
 

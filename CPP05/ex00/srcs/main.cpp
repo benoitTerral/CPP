@@ -6,11 +6,11 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 15:15:17 by bterral           #+#    #+#             */
-/*   Updated: 2022/08/30 11:29:23 by bterral          ###   ########.fr       */
+/*   Updated: 2022/09/28 16:24:02 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bureaucrat.h"
+#include "Bureaucrat.h"
 
 int main( void )
 {

@@ -6,11 +6,11 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 15:15:17 by bterral           #+#    #+#             */
-/*   Updated: 2022/09/05 15:31:56 by bterral          ###   ########.fr       */
+/*   Updated: 2022/09/29 16:15:13 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bureaucrat.h"
+#include "../headers/Bureaucrat.h"
 
 int main( void )
 {
@@ -20,13 +20,69 @@ int main( void )
 	AForm*	president;
 	AForm*	fake_president;
 
-	shrubbery = intern0.makeForm("shrubbery creation", "tree");
-	robot = intern0.makeForm("robotmy request", "bender");
-	president = intern0.makeForm("presidential pardon", "Macron");
-	fake_president = intern0.makeForm("dummy form", "dummy");
+	Bureaucrat	bureaucrat = Bureaucrat("CAF", 1);
+	
+	try
+	{
+		shrubbery = intern0.makeForm("shrubbery creation", "tree");
+		bureaucrat.signForm(*shrubbery);
+	}
+	catch(const Intern::FormTypeException& e)
+	{
+		std::cerr << BOLDRED << e.what() << RESET << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << BOLDRED << e.what() << RESET << std::endl;
+	}
+	
+	try
+	{
+		robot = intern0.makeForm("robotmy request", "bender");
+		bureaucrat.signForm(*robot);
+	}
+	catch(const Intern::FormTypeException& e)
+	{
+		std::cerr << BOLDRED << e.what() << RESET << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << BOLDRED << e.what() << RESET << std::endl;
+	}
 
-	Bureaucrat	bureaucrat = Bureaucrat("john", 1);
-	bureaucrat.signForm(*shrubbery);
+	try
+	{
+		president = intern0.makeForm("presidential pardon", "Macron");
+		bureaucrat.signForm(*president);
+	}
+	catch(const Intern::FormTypeException& e)
+	{
+		std::cerr << BOLDRED << e.what() << RESET << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << BOLDRED << e.what() << RESET << std::endl;
+	}
+	
+	try
+	{
+		fake_president = intern0.makeForm("dummy form", "dummy");
+		bureaucrat.signForm(*fake_president);
+	}
+	catch(const Intern::FormTypeException& e)
+	{
+		std::cerr << BOLDRED << e.what() << RESET << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << BOLDRED << e.what() << RESET << std::endl;
+	}
+	
+	
+
+	// test.executeForm(*fake_president);
+
+	
 
 	delete shrubbery;
 	delete robot;

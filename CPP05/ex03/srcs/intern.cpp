@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   intern.cpp                                         :+:      :+:    :+:   */
+/*   Intern.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 13:25:22 by bterral           #+#    #+#             */
-/*   Updated: 2022/09/02 09:36:25 by bterral          ###   ########.fr       */
+/*   Updated: 2022/09/29 16:08:11 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bureaucrat.h"
+#include "../headers/Bureaucrat.h"
 
 Intern::Intern( void )
 {
@@ -57,6 +57,7 @@ AForm	*Intern::makeForm(std::string form_str, std::string target)
 	{
 		case (-1):
 			std::cout << "Form required is not correct. Forms available: shrubbery creation, robotmy request, presidential pardon" << std::endl;
+			throw FormTypeException();
 			return (NULL);
 		case (0):
 			return (new ShrubberyCreationForm(target));
@@ -66,6 +67,14 @@ AForm	*Intern::makeForm(std::string form_str, std::string target)
 			return (new PresidentialPardonForm(target));
 		default:
 			std::cout << "Unexpected error occured !" << std::endl;
-			return (NULL);		
+			throw FormTypeException();
+			return (NULL);
 	}
+}
+
+//Exception
+
+const char* Intern::FormTypeException::what() const throw()
+{
+	return ("Form type does not exist, creation failed!");
 }

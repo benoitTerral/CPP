@@ -6,11 +6,11 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 15:31:36 by bterral           #+#    #+#             */
-/*   Updated: 2022/09/01 12:41:46 by bterral          ###   ########.fr       */
+/*   Updated: 2022/09/29 12:19:45 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bureaucrat.h"
+#include "Bureaucrat.h"
 
 class PresidentialPardonForm:  public AForm
 {

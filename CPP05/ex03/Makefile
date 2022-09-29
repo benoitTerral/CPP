@@ -6,7 +6,7 @@
 #    By: bterral <bterral@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/14 13:33:39 by bterral           #+#    #+#              #
-#    Updated: 2022/09/02 09:04:10 by bterral          ###   ########.fr        #
+#    Updated: 2022/09/29 14:32:47 by bterral          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ NAME			:= bureaucrat
 
 SRCS_DIR		:= ./srcs/
 
-SRCS_FILES		:= bureaucrat.cpp Aform.cpp shrubberyCreationForm.cpp main.cpp robotomyRequestForm.cpp presidentialPardonForm.cpp intern.cpp
+SRCS_FILES		:= Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp main.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp
 
 SRCS			:= $(addprefix $(SRCS_DIR), $(SRCS_FILES))
 
@@ -30,7 +30,7 @@ OBJS			:= $(addprefix $(OBJS_DIR), $(LST_OBJS))
 
 HEADERS_DIR		:= ./headers/
 
-HEADERS_FILES	:= bureaucrat.h Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.hpp  RobotomyRequestForm.hpp PresidentialPardonForm.hpp Intern.hpp
+HEADERS_FILES	:= Bureaucrat.h Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.hpp  RobotomyRequestForm.hpp PresidentialPardonForm.hpp Intern.hpp
 
 HEADERS			:= $(addprefix $(HEADERS_DIR), $(HEADERS_FILES))
 

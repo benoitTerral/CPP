@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bureaucrat.cpp                                     :+:      :+:    :+:   */
+/*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 14:21:46 by bterral           #+#    #+#             */
-/*   Updated: 2022/09/05 15:29:27 by bterral          ###   ########.fr       */
+/*   Updated: 2022/09/29 15:57:25 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bureaucrat.h"
+#include "../headers/Bureaucrat.h"
 
 Bureaucrat::Bureaucrat( void ): _name("Undefined"),_grade(150)
 {
@@ -121,15 +121,15 @@ void	Bureaucrat::executeForm(AForm const & form)
 	catch (AForm::GradeTooLowExecuteException& e)
 	{
 		std::cerr << "Bureaucrat " << this->_name << " couldn't execute the " << form.getName() << "  form because his grade is too low." << std::endl;
-		std::cerr << e.what() << '\n';
+		std::cerr << e.what() << std::endl;
 	}
 	catch (AForm::FormNotSignedException& e)
 	{
 		std::cerr << "Bureaucrat " << this->_name << " couldn't execute the " << form.getName() << " form because it is not signed." << std::endl;
-		std::cerr << e.what() << '\n';
+		std::cerr << e.what() << std::endl;
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << e.what() << std::endl;
 	}
 }

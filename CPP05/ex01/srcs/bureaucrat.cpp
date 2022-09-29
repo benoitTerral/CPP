@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bureaucrat.cpp                                     :+:      :+:    :+:   */
+/*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 14:21:46 by bterral           #+#    #+#             */
-/*   Updated: 2022/08/31 15:01:12 by bterral          ###   ########.fr       */
+/*   Updated: 2022/09/28 17:55:30 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bureaucrat.h"
+#include "../headers/Bureaucrat.h"
 
 Bureaucrat::Bureaucrat( void ): _name("Undefined"),_grade(150)
 {
@@ -18,7 +18,7 @@ Bureaucrat::Bureaucrat( void ): _name("Undefined"),_grade(150)
 	return ;
 }
 
-Bureaucrat::Bureaucrat( std::string name, unsigned int grade)
+Bureaucrat::Bureaucrat( std::string name, unsigned int grade): _name(name)
 {
 	std::cout << GREEN << "Bureaucrat - constructor with param called" << RESET << std::endl;
 	if (grade < 1)
@@ -27,10 +27,9 @@ Bureaucrat::Bureaucrat( std::string name, unsigned int grade)
 		throw	GradeTooLowException();
 	else
 		this->_grade = grade;
-	this->_name = name;
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat const& rhs): _name(rhs.getName()),_grade(rhs._grade)
+Bureaucrat::Bureaucrat(Bureaucrat const& rhs): _name(rhs.getName()),_grade(rhs.getGrade())
 {
 	std::cout << BLUE << "Bureaucrat - Copy constructor called" << RESET << std::endl;
 	return ;
@@ -77,7 +76,6 @@ const char* Bureaucrat::GradeTooLowException::what() const throw()
 
 void	Bureaucrat::incrementGrade( void )
 {
-
 	if ((this->_grade - 1) < 1)
 		throw GradeTooHighException();
 	else
@@ -86,6 +84,7 @@ void	Bureaucrat::incrementGrade( void )
 
 void	Bureaucrat::decrementGrade( void )
 {
+
 	if ((this->_grade + 1) > 150)
 		throw GradeTooLowException();
 	else

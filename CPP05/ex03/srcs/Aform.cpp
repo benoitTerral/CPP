@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Aform.cpp                                          :+:      :+:    :+:   */
+/*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 11:50:19 by bterral           #+#    #+#             */
-/*   Updated: 2022/09/01 12:04:26 by bterral          ###   ########.fr       */
+/*   Updated: 2022/09/29 16:04:36 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bureaucrat.h"
+#include "../headers/Bureaucrat.h"
 
 AForm::AForm( void ): _name("Undefined"),_isSigned(false),_gradeSign(150),_gradeExecute(150)
 {
@@ -20,11 +20,11 @@ AForm::AForm( void ): _name("Undefined"),_isSigned(false),_gradeSign(150),_grade
 
 AForm::AForm(std::string name, unsigned int gradeSign, unsigned int gradeExecute): _name(name),_isSigned(false)
 {
-	std::cout << GREEN << "AForm - constructor with param called" << RESET << std::endl;
+	std::cout << GREEN << "Form - constructor with param called" << RESET << std::endl;
 	if (gradeSign < 1 || gradeExecute < 1)
-		throw	Bureaucrat::GradeTooHighException();
-	else if (gradeSign > 150 || gradeExecute >150)
-		throw	Bureaucrat::GradeTooLowException();
+		throw	GradeTooHighException();
+	else if (gradeSign > 150 || gradeExecute > 150)
+		throw	GradeTooLowException();
 	else
 	{
 		this->_gradeSign = gradeSign;

@@ -6,11 +6,11 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 11:34:35 by bterral           #+#    #+#             */
-/*   Updated: 2022/08/31 15:09:51 by bterral          ###   ########.fr       */
+/*   Updated: 2022/09/28 16:42:44 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bureaucrat.h"
+#include "Bureaucrat.h"
 
 class Bureaucrat;
 
