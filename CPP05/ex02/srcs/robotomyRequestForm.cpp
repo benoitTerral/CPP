@@ -6,7 +6,7 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 15:49:15 by bterral           #+#    #+#             */
-/*   Updated: 2022/09/29 13:53:55 by bterral          ###   ########.fr       */
+/*   Updated: 2022/09/30 13:12:14 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ std::string		RobotomyRequestForm::getTarget( void ) const
 
 void	RobotomyRequestForm::execute(Bureaucrat const& executor) const
 {
+	static int fifty_fifty = 0;
 	if (this->getIsSigned() == false)
 		throw FormNotSignedException();
 	else if (this->executeCheckExecutorGrade(executor) == false)
@@ -60,7 +61,7 @@ void	RobotomyRequestForm::execute(Bureaucrat const& executor) const
 	else
 	{
 		std::cout << "********* drilling noises *******" << std::endl;
-		if ((rand() % 2) == 0)
+		if ((fifty_fifty++ % 2) == 0)
 			std::cout << this->getTarget() << " has been robotomized." << std::endl;
 		else
 			std::cout << "The robotomy has failed." << std::endl;

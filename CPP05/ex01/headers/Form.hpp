@@ -6,7 +6,7 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 11:34:35 by bterral           #+#    #+#             */
-/*   Updated: 2022/09/28 16:42:44 by bterral          ###   ########.fr       */
+/*   Updated: 2022/09/30 13:27:23 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,10 @@ class Form
 		;
 
 	private:
-		std::string		_name;
-		bool			_isSigned;
-		unsigned int	_gradeSign;
-		unsigned int	_gradeExecute;
-
+		const std::string		_name;
+		bool					_isSigned;
+		const unsigned int		_gradeSign;
+		const unsigned int		_gradeExecute;
 }
 ;
 std::ostream&	operator<< (std::ostream& out, const Form& form);

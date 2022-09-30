@@ -6,7 +6,7 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 15:15:17 by bterral           #+#    #+#             */
-/*   Updated: 2022/09/29 16:15:13 by bterral          ###   ########.fr       */
+/*   Updated: 2022/09/30 13:45:33 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,12 +78,6 @@ int main( void )
 		std::cerr << BOLDRED << e.what() << RESET << std::endl;
 	}
 	
-	
-
-	// test.executeForm(*fake_president);
-
-	
-
 	delete shrubbery;
 	delete robot;
 	delete president;

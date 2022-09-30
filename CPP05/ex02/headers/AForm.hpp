@@ -60,11 +60,10 @@ class AForm
 		bool				executeCheckExecutorGrade(Bureaucrat const & executor) const;
 
 	private:
-		std::string		_name;
-		bool			_isSigned;
-		unsigned int	_gradeSign;
-		unsigned int	_gradeExecute;
-
+		const std::string		_name;
+		bool					_isSigned;
+		const unsigned int		_gradeSign;
+		const unsigned int		_gradeExecute;
 }
 ;
 std::ostream&	operator<< (std::ostream& out, const AForm& form);

@@ -6,7 +6,7 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 11:50:19 by bterral           #+#    #+#             */
-/*   Updated: 2022/09/29 11:31:03 by bterral          ###   ########.fr       */
+/*   Updated: 2022/09/30 12:15:43 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,13 @@ AForm::AForm( void ): _name("Undefined"),_isSigned(false),_gradeSign(150),_grade
 	return ;
 }
 
-AForm::AForm(std::string name, unsigned int gradeSign, unsigned int gradeExecute): _name(name),_isSigned(false)
+AForm::AForm(std::string name, unsigned int gradeSign, unsigned int gradeExecute):  _name(name),_isSigned(false), _gradeSign(gradeSign), _gradeExecute(gradeExecute)
 {
 	std::cout << GREEN << "Form - constructor with param called" << RESET << std::endl;
 	if (gradeSign < 1 || gradeExecute < 1)
 		throw	GradeTooHighException();
 	else if (gradeSign > 150 || gradeExecute > 150)
 		throw	GradeTooLowException();
-	else
-	{
-		this->_gradeSign = gradeSign;
-		this->_gradeExecute = gradeExecute;
-	}
 	return ;
 }
 
@@ -42,10 +37,7 @@ AForm::AForm(AForm const& rhs): _name(rhs.getName()),_isSigned(false),_gradeSign
 AForm&	AForm::operator= (const AForm& rhs)
 {
 	std::cout << YELLOW <<  "AForm - Assignment operator called" << RESET << std::endl;
-	this->_name = rhs.getName();
-	this->_isSigned = false;
-	this->_gradeSign = rhs.getGradeSign();
-	this->_gradeExecute = rhs.getGradeExecute();
+	(void)rhs;
 	return (*this);
 }
 

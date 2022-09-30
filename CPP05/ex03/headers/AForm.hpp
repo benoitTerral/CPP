@@ -21,7 +21,6 @@ class AForm
 		AForm(std::string name, unsigned int gradeSign, unsigned int	gradeExecute);
 		virtual ~AForm( void );
 		AForm ( AForm const& rhs);
-		AForm&	operator= ( AForm const& rhs);
 		void	beSigned(Bureaucrat const &bureaucrat);
 
 		//getters
@@ -60,11 +59,11 @@ class AForm
 		bool				executeCheckExecutorGrade(Bureaucrat const & executor) const;
 
 	private:
-		std::string		_name;
-		bool			_isSigned;
-		unsigned int	_gradeSign;
-		unsigned int	_gradeExecute;
-
+		const std::string		_name;
+		bool					_isSigned;
+		const unsigned int		_gradeSign;
+		const unsigned int		_gradeExecute;
+		AForm&	operator= ( AForm const& rhs);
 }
 ;
 std::ostream&	operator<< (std::ostream& out, const AForm& form);
