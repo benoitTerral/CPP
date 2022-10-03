@@ -6,7 +6,7 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 15:15:17 by bterral           #+#    #+#             */
-/*   Updated: 2022/09/05 17:55:43 by bterral          ###   ########.fr       */
+/*   Updated: 2022/10/03 14:50:45 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ int main( void )
 	
 	std::cout << deserialized->_data0 << std::endl;
 	std::cout << deserialized->_data1 << std::endl;
-	
 	return (0);
 }
 

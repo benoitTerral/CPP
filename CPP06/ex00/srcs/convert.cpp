@@ -6,7 +6,7 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 14:21:46 by bterral           #+#    #+#             */
-/*   Updated: 2022/10/03 14:35:59 by bterral          ###   ########.fr       */
+/*   Updated: 2022/10/03 15:12:42 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,17 @@ Convert::Convert( std::string literal)
 {
 	if (literal == "-inff" || literal == "+inff" || literal == "nanf")
 		this->_literal = convert_float_limit(literal);
-	if  (literal == "-inf" || literal == "+inf" || literal == "nan")
+	else if  (literal == "-inf" || literal == "+inf" || literal == "nan")
 		this->_literal = strtod(literal.c_str(), NULL);
 	else if (literal.length() == 1 && !std::isdigit(literal[0]))
 		this->_literal = static_cast<char>(literal[0]);
 	else if (!isChar(literal) && !isInt(literal) && !isDouble(literal) && !isfloat(literal))
 		throw unhandledParamater();
 	else
+	{
+		
 		this->_literal = strtod(literal.c_str(), NULL);
+	}
 	return ;
 }
 

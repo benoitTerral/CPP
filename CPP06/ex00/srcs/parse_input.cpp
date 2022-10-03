@@ -6,7 +6,7 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/05 12:06:38 by bterral           #+#    #+#             */
-/*   Updated: 2022/10/03 14:32:34 by bterral          ###   ########.fr       */
+/*   Updated: 2022/10/03 15:14:45 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ bool	Convert::isfloat(std::string arg) const
 {
 	int	dot = 0;
 
-	if (arg[0] != '-' && arg[0] < '0' && arg[0] > '9')
+	if (arg[0] != '-' && (arg[0] < '0'|| arg[0] > '9'))
 		return false;
 	if (arg[0] == '-' && arg.length() == 1)
 		return false;
