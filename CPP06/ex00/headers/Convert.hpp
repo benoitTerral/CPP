@@ -44,6 +44,7 @@ class Convert
 		bool		isInt(std::string arg) const;
 		bool		isDouble(std::string arg) const;
 		bool		isfloat(std::string arg) const;
+		double		convert_float_limit(std::string literal);
 }
 ;
 

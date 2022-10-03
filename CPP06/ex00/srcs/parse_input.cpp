@@ -6,11 +6,11 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/05 12:06:38 by bterral           #+#    #+#             */
-/*   Updated: 2022/09/06 14:41:27 by bterral          ###   ########.fr       */
+/*   Updated: 2022/10/03 14:32:34 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "convert.h"
+#include "../headers/convert.h"
 
 bool	Convert::isChar(std::string arg) const
 {
@@ -87,4 +87,16 @@ bool	Convert::isfloat(std::string arg) const
 	if (arg[i] != 'f')
 		return false;
 	return true;
+}
+
+double	Convert::convert_float_limit(std::string literal)
+{
+	if (literal == "nanf")
+		return (strtod("nan", NULL));
+	else if (literal == "-inff")
+		return (strtod("-inf", NULL));
+	else if (literal == "+inff")
+		return (strtod("+inf", NULL));
+	else
+		return (0);
 }

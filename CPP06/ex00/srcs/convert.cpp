@@ -6,7 +6,7 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 14:21:46 by bterral           #+#    #+#             */
-/*   Updated: 2022/09/06 14:41:28 by bterral          ###   ########.fr       */
+/*   Updated: 2022/10/03 14:35:59 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,18 @@
 
 Convert::Convert( void )
 {
-	std::cout << GREEN << "Convert - default constructor called" << RESET << std::endl;
 	this->_literal = 0;
 	return ;
 }
 
 Convert::Convert( std::string literal)
 {
-	std::cout << GREEN << "Convert - constructor with param called" << RESET << std::endl;
-	if (literal == "-inff" || literal == "+inff" || literal == "nanf" || literal == "-inf" || literal == "+inf" || literal == "nan")
+	if (literal == "-inff" || literal == "+inff" || literal == "nanf")
+		this->_literal = convert_float_limit(literal);
+	if  (literal == "-inf" || literal == "+inf" || literal == "nan")
 		this->_literal = strtod(literal.c_str(), NULL);
+	else if (literal.length() == 1 && !std::isdigit(literal[0]))
+		this->_literal = static_cast<char>(literal[0]);
 	else if (!isChar(literal) && !isInt(literal) && !isDouble(literal) && !isfloat(literal))
 		throw unhandledParamater();
 	else
@@ -33,20 +35,17 @@ Convert::Convert( std::string literal)
 
 Convert::Convert(Convert const& rhs): _literal(rhs.getLiteral())
 {
-	std::cout << BLUE << "Convert - Copy constructor called" << RESET << std::endl;
 	return ;
 }
 
 Convert&	Convert::operator= (const Convert& rhs)
 {
-	std::cout << YELLOW <<  "Convert - Assignment operator called" << RESET << std::endl;
 	this->_literal = rhs.getLiteral();
 	return (*this);
 }
 
 Convert::~Convert( void )
 {
-	std::cout << RED << "Convert - Destructor called" << RESET << std::endl;
 }
 
 //Getters
@@ -80,7 +79,7 @@ void		Convert::print_char( void ) const
 void		Convert::print_int( void ) const
 {
 	std::cout << "int: ";
-	if (this->getLiteral() > INT_MIN || this->getLiteral() < INT_MAX)
+	if (this->getLiteral() > INT_MIN && this->getLiteral() < INT_MAX)
 		std::cout << static_cast<int>(this->getLiteral()) << std::endl;
 	else
 		std::cout << "impossible" << std::endl;
@@ -89,14 +88,14 @@ void		Convert::print_int( void ) const
 void		Convert::print_float( void ) const
 {
 	std::cout << "float: ";
-	if (this->getLiteral() < FLT_MIN)
+	if (this->getLiteral() < -FLT_MAX)
 		std::cout << "-inff" << std::endl;
 	else if (this->getLiteral() > FLT_MAX)
 		std::cout << "inff" << std::endl;
 	else if (static_cast<float>(this->getLiteral()) == static_cast<int>(this->getLiteral()))
 		std::cout << static_cast<float>(this->getLiteral()) << ".0f" << std::endl;
 	else
-		std::cout << static_cast<float>(this->getLiteral()) << std::endl;
+		std::cout << static_cast<float>(this->getLiteral()) << "f" << std::endl;
 }
 
 void		Convert::print_double( void ) const
