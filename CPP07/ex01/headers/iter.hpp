@@ -6,7 +6,7 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 14:17:16 by bterral           #+#    #+#             */
-/*   Updated: 2022/09/06 15:32:28 by bterral          ###   ########.fr       */
+/*   Updated: 2022/10/04 13:46:14 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,21 @@
 # include <iostream>
 
 template< typename T>
-void	array_mod(T *array, size_t size, void func(T &))
+void	iter(T *array, size_t size, void func(T &))
 {
 	for (size_t i = 0; i < size; i++)
 		func(array[i]);
 }
 
 template< typename T>
-void	time_two(T input)
+void	iter(T const *array, size_t size, void func(T const &))
+{
+	for (size_t i = 0; i < size; i++)
+		func(array[i]);
+}
+
+template< typename T>
+void	time_two(T const & input)
 {
 	std::cout << input * 2 << std::endl; 
 }

@@ -6,7 +6,7 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 14:17:16 by bterral           #+#    #+#             */
-/*   Updated: 2022/09/09 17:57:46 by bterral          ###   ########.fr       */
+/*   Updated: 2022/10/04 14:50:39 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ class Array
 		{
 			std::cout << GREEN << "Array - constructor called with param" << RESET << std::endl;
 			this->_array = new T[n];
+			for (unsigned int i = 0; i < n; i++)
+				_array[i] = T();
 			this->_size = n;
 		}
 		~Array<T>( void )
@@ -76,9 +78,16 @@ class Array
 				this->_array[i] = rhs._array[i];
 			return (*this);
 		}
-		T		&operator[] ( unsigned int index) const
+		const T		&operator[] ( unsigned int index) const
 		{
-			if (index >= this->size()) //should I check negative index
+			if (index >= this->size() || index < 0)
+				throw	indexException();
+			else
+				return (this->_array[index]);
+		}
+		T		&operator[] ( unsigned int index)
+		{
+			if (index >= this->size() || index < 0)
 				throw	indexException();
 			else
 				return (this->_array[index]);
