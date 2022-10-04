@@ -6,7 +6,7 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 14:17:16 by bterral           #+#    #+#             */
-/*   Updated: 2022/10/04 14:50:39 by bterral          ###   ########.fr       */
+/*   Updated: 2022/10/04 16:17:58 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,14 +55,13 @@ class Array
 		~Array<T>( void )
 		{
 			std::cout << RED << "Array - Destructor called" << RESET << std::endl;
-			//check what happens if size = 0
 			if (this->_array)
-			// if (this->_size > 0)
 				delete [] this->_array;
 		}
 		Array<T>( Array<T> const& rhs)
 		{
 			std::cout << GREEN << "Array - copy constructor" << RESET << std::endl;
+			this->_array = NULL;
 			*this = rhs;
 		}
 		Array<T>	& operator=(Array<T> const & rhs)
