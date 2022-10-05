@@ -6,7 +6,7 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 13:50:04 by bterral           #+#    #+#             */
-/*   Updated: 2022/09/12 17:08:35 by bterral          ###   ########.fr       */
+/*   Updated: 2022/10/05 11:06:15 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,10 @@ int main( void )
 	std::cout << std::endl;
 
 
+	//deque
+	std::deque<int>				dqe;
+	std::deque<int>::iterator	ite;
+
 	try
 	{
 		std::cout << "Is 4 in vector: ";
@@ -57,6 +61,21 @@ int main( void )
 	{
 		std::cout << "Is 4 in list: ";
 		it = easyfind(lst, 4);
+		std::cout << *it << std::endl;
+	}
+	catch(const notInContainerException& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+
+	try
+	{
+		std::cout << "Is 4 in empty deque: ";
+		ite = easyfind(dqe, 4);
 		std::cout << *it << std::endl;
 	}
 	catch(const notInContainerException& e)

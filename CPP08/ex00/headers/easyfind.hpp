@@ -6,7 +6,7 @@
 /*   By: bterral <bterral@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 13:40:02 by bterral           #+#    #+#             */
-/*   Updated: 2022/09/12 17:04:09 by bterral          ###   ########.fr       */
+/*   Updated: 2022/10/05 15:08:53 by bterral          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,7 @@ typename T::iterator	easyfind(T container, int nb)
 {
 	typename T::iterator	iter;
 	
-	for (iter = container.begin(); iter != container.end(); iter++)
-	{
-		if (*iter == nb)
-			return (iter);
-	}
+	iter = std::find(container.begin(), container.end(), nb);
 	if (iter == container.end())
 		throw	notInContainerException();
 	return (iter);
